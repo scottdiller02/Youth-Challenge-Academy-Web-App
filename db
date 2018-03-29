@@ -1,0 +1,24 @@
+'use strict';
+var MongoClient = require('mongodb').MongoClient
+var YCAdb=null;
+
+exports.connect = function(url, callback) {
+  if (YCAdb) return callback();
+  MongoClient.connect(url, function(err, db) {
+    if (err) return callback(err);
+    YCAdb = db;
+    callback();
+  })
+}
+exports.close = function(callback) {
+  if (YCAdb) {
+    YCAdb.close(function(err, result) {
+      YCAdb = null;
+      callback(err)
+    })
+  }
+}
+
+exports.getDb = function() {
+  return YCAdb;
+}

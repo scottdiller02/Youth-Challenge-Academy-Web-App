@@ -1,0 +1,133 @@
+img {
+	margin-left: 44%;
+	display: block;
+	width: 35%;
+	height: 35%;
+}
+.navbar-text{
+	padding-top:5px;
+	font-size: 14pt;
+}
+#slogan {
+	font-size: 14pt;
+	font-weight: bold;
+	bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+}
+.thumbnail {
+	text-align: center;
+	position: relative;
+	width: 260px;
+	height: 500px;
+	float:left;
+}
+#thumbnailR {
+	text-align: center;
+	position: relative;
+	width: 260px;
+	height: 600px;
+	float:left;
+}
+#thumbnailEdit {
+	text-align: left;
+	position: relative;
+	width: 860px;
+	height: 400px;
+	margin: auto;
+}
+#thumbnailEdit2 {
+	text-align: left;
+	position: relative;
+	width: 600px;
+	height: 420px;
+	margin: auto;
+}
+
+.well {
+	text-align: center;
+	position: relative;
+	width: 210px;
+	height: 400px;
+	margin: auto;
+}
+#wellR {
+	text-align: center;
+	position: relative;
+	width: 210px;
+	height: 500px;
+	margin: auto;
+}
+#wellEdit {
+	text-align: center;
+	position: relative;
+	width: 840px;
+	height: 320px;
+	margin: auto;
+}
+#wellEdit2 {
+	text-align: center;
+	position: relative;
+	width: 580px;
+	height: 350px;
+	margin: auto;
+}
+#thumbnailSearch{
+	text-align: left;
+	position: relative;
+	width: 540px;
+	height: 330px;
+	margin: auto;
+}
+#wellSearch {
+	text-align: center;
+	position: relative;
+	width: 500px;
+	height: 250px;
+	margin: auto;
+}
+#thumbnailRecord {
+	text-align: left;
+	position: relative;
+	width: 1240px;
+	height: 710px;
+	margin: auto;
+}
+#wellRecord {
+	text-align: center;
+	position: relative;
+	width: 1200px;
+	height: 630px;
+	margin: auto;
+}
+#deleteButton {
+	float: left;
+}
+#attachAdditionalComments {
+	float: left;
+}
+#attachAdditionalFiles {
+	float: left;
+}
+#save{
+	float: right;
+}
+#cancel{
+	float: right;
+}
+/*.btn {
+	width: 170px;
+}*/
+
+body{
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.btn-primary {
+    background: #24478f;
+    color: #ffffff;
+}
