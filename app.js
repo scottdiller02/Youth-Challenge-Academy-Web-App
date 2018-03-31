@@ -102,6 +102,10 @@ app.get("/search",function(req,res){
 	res.render(`search`);
 });
 
+app.get("/addApplicant",function(req,res){
+		console.log("Coming a applicant request!");
+	res.render(`addApplicant`);
+});
 
 app.set('db',db);
 module.exports.app=app;
