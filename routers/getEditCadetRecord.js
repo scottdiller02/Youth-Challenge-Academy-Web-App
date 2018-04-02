@@ -51,17 +51,21 @@ router.post('/editCadetRecord', function(req, res) {
    	var location=req.body.outputLocation;
    	//var age=req.body.outputAge;
    	//var sex=req.body.outputSex;
-   	var id = JSON.parse(`{"_id":"${_id}"}`);
+
+   	//var id = JSON.parse(`{"_id":"${_id}"}`);
+   	var id = JSON.parse(`{"SSN":"${SSN}"}`);
    	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
    	console.log(id);
-   	var update = JSON.parse(`{"lname":"${lname}","fname":"${fname}","SSN":"${SSN}","location":"${location}"}`); //"SSN":"555555555","age":"${age}","sex":"${sex}",}
+
+   	var update = JSON.parse(`{"lname":"${lname}","fname":"${fname}","location":"${location}"}`); //"SSN":"${SSN}","age":"${age}","sex":"${sex}",}
    	console.log(update);
-   	//collection.updateOne(id, {$set:update}, function(err, res) {
-    //	if (err) 
-    //		throw err;
-   	//	console.log("1 document updated");
+
+   	collection.updateOne(id, {$set:update}, function(err, res) {
+    	if (err) 
+    		throw err;
+   		console.log("1 document updated");
     	//db.close();
-  	//});
+  	});
   	res.redirect('/cadetRecords');
 
 });
