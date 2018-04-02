@@ -43,23 +43,26 @@ router.get("/cadets", function(req, res){
 
 router.post('/editCadetRecord', function(req, res) {
    	var collection = db.getDb().collection('cadets');
-   	var _id= req.body.cadetID;
-   	var fname=req.body.firstName;
-   	var lname=req.body.lastName;
-   	var SSN=req.body.social;
-   	var location=req.body.location;
+   	console.log(req.body);
+   	var _id=req.body.cadetID;
+   	var fname=req.body.outputFirstName;
+   	var lname=req.body.outputLastName;
+   	var SSN=req.body.outputSocial;
+   	var location=req.body.outputLocation;
    	//var age=req.body.outputAge;
    	//var sex=req.body.outputSex;
-   	//var id = JSON.parse(`{"_id":"${_id}}"`);
-   	var id = JSON.parse(`{"SSN":"${SSN}"}`);
-   	var update = JSON.parse(`{"lname":"${lname}","fname":"${fname}","location":"${location}"}`); //"SSN":"${SSN}","age":"${age}","sex":"${sex}",}
-   	
-   	collection.updateOne(id, {$set:update}, function(err, res) {
-    	if (err) 
-    		throw err;
-   		console.log("1 document updated");
+   	var id = JSON.parse(`{"_id":"${_id}"}`);
+   	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
+   	console.log(id);
+   	var update = JSON.parse(`{"lname":"${lname}","fname":"${fname}","SSN":"${SSN}","location":"${location}"}`); //"SSN":"555555555","age":"${age}","sex":"${sex}",}
+   	console.log(update);
+   	//collection.updateOne(id, {$set:update}, function(err, res) {
+    //	if (err) 
+    //		throw err;
+   	//	console.log("1 document updated");
     	//db.close();
-  	});
+  	//});
+  	res.redirect('/cadetRecords');
 
 });
 
