@@ -44,7 +44,7 @@ router.get("/cadets", function(req, res){
 router.post('/editCadetRecord', function(req, res) {
    	var collection = db.getDb().collection('cadets');
    	console.log(req.body);
-   	var _id=req.body.cadetID;
+   	//var _id=req.body.cadetID;
    	var fname=req.body.outputFirstName;
    	var lname=req.body.outputLastName;
    	var SSN=req.body.outputSocial;

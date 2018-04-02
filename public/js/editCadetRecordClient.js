@@ -10,8 +10,8 @@ $(document).ready(function(){
 });
 
 function showCadetInfo(){
-	var ID = localStorage.getItem("id").replace(/"/g, "");
-	document.getElementById("cadetID").innerHTML="Cadet ID: " + ID;
+	//var ID = localStorage.getItem("id").replace(/"/g, "");
+	//document.getElementById("cadetID").innerHTML="Cadet ID: " + ID;
 	var lastName = localStorage.getItem("lname").replace(/"/g, "");
 	document.getElementById("outputLastName").value = lastName;
 	var firstName = localStorage.getItem("fname").replace(/"/g, "");
