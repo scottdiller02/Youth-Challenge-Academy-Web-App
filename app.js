@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var db = require('./db');
 var dbLink=require("./json/config.json");
 //var dbLink=require("./json/dbproduction.json");
-var url = 'mongodb://localhost:27017';
+var url = dbLink.devServer.url;
 
 var session=require("express-session");
 var app=express();
