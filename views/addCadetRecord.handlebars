@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title> Youth Challenge Academy</title>
-	
-	<link rel = "stylesheet" type = "text/css" href = "./css/addApplicantStyle.css">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-</head>
-<body>
-
-	<!--Navbar-->
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <a class="navbar-brand">Welcome Recruiter!</a>
-			    </div>
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li><a href="#">Home</a></li>
-			        <li class="active"><a href="#">Search <span class="sr-only">(current)</span></a></li>
-			      </ul>
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="#">Logout</a></li>
-			      </ul>
-		    </div><!--close navbar-collapse -->
-		  </div><!--close container-fluid -->
-		</nav><!--close nav-->
-	<!--Navbar end-->
-
-	<!--Logo Image-->
-     	<img src="images/logo.jpg">
-    <!--Logo Image end-->
-
-
+<div>
+	<br><br>
 	<!--Main Content-->
-
-			    <div class="thumbnail">
-			        <h3><font color = "#3F8EBF">&nbsp Add Applicant Record</font></h3>
-			        <div class = "well">
+	<div class="container">
+		<div class="row">
+   			 <div class="col-lg-6 col-lg-offset-2">
+			    
+			    <div class="thumbnail" id="thumbnailAddApplicant">
+			        <h3><font color = "#345487">&nbsp Add Cadet Record</font></h3>
+			        <div class = "well" id="wellAddApplicant">
 			        	
 			        	<form>
 			        		<div class="col-sm-5 col-md-5">
@@ -100,21 +69,21 @@
 								    </div>
 							  	</div>
 							  	<div class="form-group row">
-							   		<button type="button" id = "attachFiles" class="btn btn-primary">Attach Files</button>
+							   		<button type="button" id = "attachFilesAddApplicant" class="btn btn-primary">Attach Files</button>
 							    </div>
 							 
 							</div>
 							<div class="col-sm-12 col-md-12">
 								<br>
-							   <button type="button" id = "cancel" class="btn btn-primary">Cancel</button>
-							   <button type="button" id = "save" class="btn btn-primary">Save</button>
+							   <button type="button" id = "cancelAddApplicant" class="btn btn-primary">Cancel</button>
+							   <button type="button" id = "saveAddApplicant" class="btn btn-primary">Save</button>
 							</div>
 			        	</form>
 
 					</div>
 			    </div>
+			</div>
+		</div>
+	</div>
 	<!--Main Content end-->
-
-
-</body>
-</html>
+</div>
