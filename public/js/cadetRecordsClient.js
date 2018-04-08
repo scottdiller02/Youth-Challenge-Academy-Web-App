@@ -4,22 +4,10 @@ $(document).ready(function(){
 	var jqxhr = $.ajax( "/getCadetRecords" ).done(function(docs) {
 		for(doc of docs)
 			cadetsArr.push(doc);
-			showCadets();
+		showCadets();
 	})
 });
-//trigger automatically..
-$(document).ready(function(){
-	var jqxhr=$.ajax("/getMenuItems")
-	.done(function(docs){
-		for(doc of docs)
-			cadetsArr.push(doc);
-		generateCadets();
-	})
-	.fail(function(){
-		alert("Try Again");
-	})
-})
-//edit
+
 function registerButtonEvents()
 {
 	let buttons=document.getElementsByTagName("button");
@@ -31,53 +19,13 @@ function registerButtonEvents()
 	}
 }
 
-function generateCadets() {
-	var i=0;
-	var htmlPart="";
-	htmlPart=`
-					<table class="table table-striped">
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>SSN</th>
-						<th>Campus</th>
-						<th>Age</th>
-						<th>Sex</th>
-						<th>Select</th>
-					</tr>
-			`;
-	var arr=localStorage.getItem("cadets");
-	if(arr===null)
-		htmlPart="You have no items in cadets!";
-	else
-	{
-		var arrIndices = JSON.parse("[" + arrS + "]");
-	
-	  for(i = 0, length = arr.length; i < length; i++){
-	  	cadetNum=arr[i];
-	  	htmlPart+=
-				`
-					<tr>
-						<td>`+ arr.firstName + `</td>
-						<td>` + arr.lastName + `</td>
-						<td>` + arr.ssn + `</td>
-						<td>` + arr.campus + `</td>
-						<td>` + arr.age + `</td>
-						<td>` + arr.sex + `</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(` + i + `);" >Select</button></td>
-					</tr>`;
-	  }
-	}
-	//htmlPart=localStorage.getItem("cart");
-	var div=document.getElementById("viewCadets");
-	div.innerHTML=htmlPart;
-	//div.insertAdjacentHTML('afterend', htmlPart);
-}
 
 function showCadets()
 {
-	let cadetStorage=localStorage.getItem("cadets");
-	let cadets=[];
+	//let cadetStorage=localStorage.getItem("cadets");
+	//let cadetStorage= cadetsArr;
+	//console.log(cadetsArr);
+	//let cadets=[];
 	let info=`
 					<table class="table table-striped">
 					<tr>
@@ -87,30 +35,32 @@ function showCadets()
 						<th>Campus</th>
 						<th>Age</th>
 						<th>Sex</th>
-						<th>Select</th>
+						<th>Edit</th>
 					</tr>
 			`;
 	
 	
-	if (cadetStorage===null)
+	if (cadetsArr===null)
 		document.getElementById("viewCadets").innerHTML="<h2>Error showing cadets</h2>";
 	else
 	{
-		cadets=cadetStorage.split(",");
+		//cadets=cadetStorage.split(",");
 		
-		for (let i in cart)
+		for (let i in cadetsArr)
 		{
-			let item=cadetsArr[cadetStorage[i]];
+			let item=cadetsArr[i];
+			
+
 			info+=
 				`
 					<tr>
-						<td>${item.firstName}</td>
-						<td>${item.lastName}</td>
-						<td>${item.ssn}</td>
-						<td>${item.campus}</td>
+						<td>${item.fname}</td>
+						<td>${item.lname}</td>
+						<td>${item.SSN}</td>
+						<td>${item.location}</td>
 						<td>${item.age}</td>
 						<td>${item.sex}</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Select</button></td>
+						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
 					</tr>`;
 		}//end of loop
 		info+= `</table>`;
@@ -118,23 +68,29 @@ function showCadets()
 	}
 }
 
-function viewCadet(rID)
+function viewCadet(item)
 {
-	var cadets=localStorage.getItem("cadets");
-	cadets=cadets.split(",");
+	//var cadets=localStorage.getItem("cadets");
+	//cadets=cadets.split(",");
+	cadet = cadetsArr[item];
 	
 	//cadets.splice(rID,1);
-	if(cadet.length==0)
+	if(cadetsArr.length==0)
 	{
 		clearCart();
 	}
 	else
 	{
-		localStorage.setItem("cart", cart);
-		localStorage.setItem("number", cart.length);
+		localStorage.setItem("id", JSON.stringify(cadet._id));
+		localStorage.setItem("fname", JSON.stringify(cadet.fname));
+		localStorage.setItem("lname", JSON.stringify(cadet.lname));
+		localStorage.setItem("SSN", JSON.stringify(cadet.SSN));
+		localStorage.setItem("location", JSON.stringify(cadet.location));
+		localStorage.setItem("age", JSON.stringify(cadet.age));
+		localStorage.setItem("sex", JSON.stringify(cadet.sex));
 	}
 
-	showCart();
+	editCadet(item);
 }
 
 function getMenuArr(){
@@ -155,12 +111,14 @@ function getMenuArr(){
    
 }
 
-function editCadet(rID)
+function editCadet(item)
 {
-	var cart=localStorage.getItem("cart");
+	window.location="http://localhost:3000/editCadetRecord";
+
+	/*var cart=localStorage.getItem("cart");
 	cart=cart.split(",");
 	
-	cart.splice(rID,1);
+	cart.splice(item, 1);
 	if(cart.length==0)
 	{
 		clearCart();
@@ -172,4 +130,5 @@ function editCadet(rID)
 	}
 
 	showCart();
+	*/
 }
