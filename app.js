@@ -31,10 +31,13 @@ app.use(express.static(publicPath));
 app.get('/adminHome.html', authAdmin);
 app.use(require('./routers/getAdminHome'));
 app.use(require('./routers/getCadetRecords'));
+app.use(require('./routers/getAddCadetRecords'));
 app.use(require('./routers/getCounselorHome'));
 app.use(require('./routers/getEditCadetRecord'));
 app.use(require('./routers/getEditStaffRecord'));
 app.use(require('./routers/getRecruiterHome'));
+app.use(require('./routers/getApplicantRecords'));
+app.use(require('./routers/getAddApplicants'));
 app.use(require('./routers/getStaffRecords'));
 app.use(require('./routers/getSearch'));
 //app.user routers
@@ -75,6 +78,21 @@ app.get("/cadetRecords",function(req,res){
 app.get("/editCadetRecord",function(req,res){
 		console.log("Coming a cadet request!");
 	res.render(`editCadetRecord`);
+});
+
+app.get("/addCadetRecord",function(req,res){
+		console.log("Coming a cadet request!");
+	res.render(`addCadetRecord`);
+});
+
+app.get("/applicantRecords",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`applicantRecords`);
+});
+
+app.get("/addApplicant",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`addApplicant`);
 });
 
 app.get("/staffRecords",function(req,res){
