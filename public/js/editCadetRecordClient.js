@@ -2,11 +2,7 @@
 var cadetInfo = [];
 
 $(document).ready(function(){
-	//var jqxhr = $.ajax( "/getEditCadetRecord" ).done(function(docs) {
-	//	for(doc of docs)
-	//		cadetInfo.push(doc);
 		showCadetInfo();
-	//})
 });
 
 function showCadetInfo(){
@@ -28,31 +24,14 @@ function showCadetInfo(){
 
 //function saveChanges(){
 $('#save').click(function(){
-	//console.log("it works");
+	/*console.log("it works");
 	var lname = $('#outputLastName').val();
 	var fname = $('#outputFirstName').val();
 	var social = $('#outputSocial').val();
 	var location = $('#outputLocation').val();
-
+	*/
 	var jqxhr = $.ajax( "/editCadetRecord" ).done(function() {
 		console.log("success");
 	})
-
-	/*$.ajax({
-		url: "http://localhost:3000/putEditCadetRecords",
-		method: 'PUT',
-		contentType: 'application/json',
-		data: JSON.stringify({lname: lname, fname: fname, social: social, location: location}),
-		success: function(response){
-			console.log(response);
-		}
-	});*/
-
-	//var jqxhr = $.ajax( "/putEditCadetRecord" ).done(function(docs) {
-		//for(doc of docs)
-		//	cadetInfo.push(doc);
-		//showCadetInfo();
-	//})
-
 });
 //}
