@@ -22,10 +22,7 @@ function registerButtonEvents()
 
 function showCadets()
 {
-	//let cadetStorage=localStorage.getItem("cadets");
-	//let cadetStorage= cadetsArr;
-	//console.log(cadetsArr);
-	//let cadets=[];
+	
 	let info=`
 					<table class="table table-striped">
 					<tr>
@@ -44,7 +41,7 @@ function showCadets()
 		document.getElementById("viewCadets").innerHTML="<h2>Error showing cadets</h2>";
 	else
 	{
-		//cadets=cadetStorage.split(",");
+		
 		
 		for (let i in cadetsArr)
 		{
@@ -54,10 +51,10 @@ function showCadets()
 			info+=
 				`
 					<tr>
-						<td>${item.fname}</td>
-						<td>${item.lname}</td>
-						<td>${item.SSN}</td>
-						<td>${item.location}</td>
+						<td>${item.firstName}</td>
+						<td>${item.lastName}</td>
+						<td>${item.ssn}</td>
+						<td>${item.campus}</td>
 						<td>${item.age}</td>
 						<td>${item.sex}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
@@ -70,11 +67,9 @@ function showCadets()
 
 function viewCadet(item)
 {
-	//var cadets=localStorage.getItem("cadets");
-	//cadets=cadets.split(",");
 	cadet = cadetsArr[item];
 	
-	//cadets.splice(rID,1);
+
 	if(cadetsArr.length==0)
 	{
 		clearCart();
@@ -82,10 +77,10 @@ function viewCadet(item)
 	else
 	{
 		localStorage.setItem("id", JSON.stringify(cadet._id));
-		localStorage.setItem("fname", JSON.stringify(cadet.fname));
-		localStorage.setItem("lname", JSON.stringify(cadet.lname));
-		localStorage.setItem("SSN", JSON.stringify(cadet.SSN));
-		localStorage.setItem("location", JSON.stringify(cadet.location));
+		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
+		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
+		localStorage.setItem("ssn", JSON.stringify(cadet.ssn));
+		localStorage.setItem("campus", JSON.stringify(cadet.campus));
 		localStorage.setItem("age", JSON.stringify(cadet.age));
 		localStorage.setItem("sex", JSON.stringify(cadet.sex));
 	}
@@ -115,20 +110,4 @@ function editCadet(item)
 {
 	window.location="http://localhost:3000/editCadetRecord";
 
-	/*var cart=localStorage.getItem("cart");
-	cart=cart.split(",");
-	
-	cart.splice(item, 1);
-	if(cart.length==0)
-	{
-		clearCart();
-	}
-	else
-	{
-		localStorage.setItem("cart", cart);
-		localStorage.setItem("number", cart.length);
-	}
-
-	showCart();
-	*/
 }

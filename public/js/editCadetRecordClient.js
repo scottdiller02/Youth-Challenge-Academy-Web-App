@@ -12,14 +12,14 @@ $(document).ready(function(){
 function showCadetInfo(){
 	//var ID = localStorage.getItem("id").replace(/"/g, "");
 	//document.getElementById("cadetID").innerHTML="Cadet ID: " + ID;
-	var lastName = localStorage.getItem("lname").replace(/"/g, "");
+	var lastName = localStorage.getItem("lastName").replace(/"/g, "");
 	document.getElementById("outputLastName").value = lastName;
-	var firstName = localStorage.getItem("fname").replace(/"/g, "");
+	var firstName = localStorage.getItem("firstName").replace(/"/g, "");
 	document.getElementById("outputFirstName").value = firstName;
-	var social = localStorage.getItem("SSN").replace(/"/g, "");
+	var social = localStorage.getItem("ssn").replace(/"/g, "");
 	document.getElementById("outputSocial").value = social;
-	var location = localStorage.getItem("location").replace(/"/g, "");
-	document.getElementById("outputLocation").value = location;
+	var campus = localStorage.getItem("campus").replace(/"/g, "");
+	document.getElementById("outputCampus").value = campus;
 	//document.getElementById("outputAge").value = localStorage.getItem("age");
 	//document.getElementById("outputSex").value = localStorage.getItem("sex");
 
@@ -29,30 +29,14 @@ function showCadetInfo(){
 //function saveChanges(){
 $('#save').click(function(){
 	//console.log("it works");
-	var lname = $('#outputLastName').val();
-	var fname = $('#outputFirstName').val();
+	var lastName = $('#outputLastName').val();
+	var firstName = $('#outputFirstName').val();
 	var social = $('#outputSocial').val();
-	var location = $('#outputLocation').val();
+	var campus = $('#outputCampus').val();
 
 	var jqxhr = $.ajax( "/editCadetRecord" ).done(function() {
 		console.log("success");
 	})
-
-	/*$.ajax({
-		url: "http://localhost:3000/putEditCadetRecords",
-		method: 'PUT',
-		contentType: 'application/json',
-		data: JSON.stringify({lname: lname, fname: fname, social: social, location: location}),
-		success: function(response){
-			console.log(response);
-		}
-	});*/
-
-	//var jqxhr = $.ajax( "/putEditCadetRecord" ).done(function(docs) {
-		//for(doc of docs)
-		//	cadetInfo.push(doc);
-		//showCadetInfo();
-	//})
 
 });
 //}
