@@ -50,7 +50,7 @@ db.connect(url, function(err){
  }
 })
 
-app.get("/",function(req,res){
+app.get("/", function(req,res){
 		console.log("Coming a request!");
 		res.render(`login`);
 	//res.sendFile(`${publicPath}/login.html`);
@@ -62,7 +62,7 @@ app.get("/login",function(req,res){
 	//res.sendFile(`${publicPath}/login.html`);
 });
 
-app.get("/adminHome",function(req,res){
+app.get("/adminHome",authAdmin,function(req,res){
 		console.log("Coming a admin request!");
 	res.render(`adminHome`);
 });
