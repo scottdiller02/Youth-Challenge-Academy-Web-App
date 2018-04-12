@@ -33,6 +33,7 @@ function showCadets()
 						<th>Age</th>
 						<th>Sex</th>
 						<th>Edit</th>
+						<th>View</th>
 					</tr>
 			`;
 	
@@ -58,6 +59,7 @@ function showCadets()
 						<td>${item.age}</td>
 						<td>${item.sex}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 					</tr>`;
 		}//end of loop
 		info+= `</table>`;

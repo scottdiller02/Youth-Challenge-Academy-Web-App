@@ -5,7 +5,7 @@
 	    <div class="thumbnail" id="thumbnailRecord">
 	        <h3><font color = "#345487">&nbsp Cadet Records</font></h3>
 	        <div class = "well" id="wellRecord">
-	        	<div class="col-sm-8 col-md-8" id="viewCadets">
+	        	<div class="col-sm-12 col-md-12" id="viewCadets">
 	        	<table class="table table-striped">
 					<tr>
 						<th>First Name</th>
@@ -15,6 +15,7 @@
 						<th>Age</th>
 						<th>Sex</th>
 						<th>Select</th>
+						<th>View</th>
 					</tr>
 					{{#each infoCadets}}
 					<tr>
@@ -25,6 +26,7 @@
 						<td>{{age}}</td>
 						<td>{{sex}}</td>
 						<td><button type="button" class="btn btn-primary " onclick="goToEdit({{@index}})">Edit</button></td>
+						<td><button type="button" class="btn btn-primary " onclick="goToView({{@index}})">View</button></td>
 					</tr>
 					{{/each}}
 				</table>

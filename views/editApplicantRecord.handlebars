@@ -1,0 +1,84 @@
+<div>
+	<br><br>
+	<!--Main Content-->
+		<div class="col-sm-8 col-md-8 col-sm-push-2 col-md-push-2">
+	    <div class="thumbnail" id="thumbnailEdit">
+	        <h3><font color = "#345487">&nbsp Edit Cadet Records</font></h3>
+	        <div class = "well" id="wellEdit">
+	        	
+	        	<form action="editCadetRecord" method="post">
+	        		<div class="col-sm-5 col-md-5">
+					  <div class="form-group row">
+					    <label for="outputLastName" class="col-sm-4 col-form-label">Last Name:</label>
+					    <div class="col-sm-8">
+					      <input type="lastName" class="form-control" id="outputLastName" name="outputLastName">
+					    </div>
+					  </div>
+					  <div class="form-group row">
+					    <label for="outputFirstName" class="col-sm-4 col-form-label">First Name:</label>
+					    <div class="col-sm-8">
+					      <input type="firstName" class="form-control" id="outputFirstName" name="outputFirstName">
+					    </div>
+					  </div>
+					  <div class="form-group row">
+					    <label for="outputSocial" class="col-sm-4 col-form-label">SSN#:</label>
+					    <div class="col-sm-8">
+					      <input type="social" class="form-control" id="outputSocial" name="outputSocial">
+					    </div>
+					  </div>
+					  <div class="form-group row">
+					    <label for="outputCampus" class="col-sm-4 col-form-label">Campus:</label>
+					    <div class="col-sm-8">
+					      <input type="campus" class="form-control" id="outputCampus" name="outputCampus">
+					    </div>
+					  </div>
+					  <br><br>
+					  <div class="form-group row">
+					 	 <button type="button" id = "deleteButton" class="btn btn-primary">Delete Record</button>
+					 </div>
+	        		</div>
+
+
+
+	        		<div class="col-sm-7 col-md-7">
+					  <div class="form-group row">
+					    <label for="outputLastName" class="col-sm-5 col-form-label">Current Comment Files:</label>
+					    <div class="col-sm-7">
+					      <input type="comments" class="form-control" id="outputComments" name="outputComments">
+					    </div>
+					  </div>
+					 
+					 <div class="form-group row">
+					 	 <button type="button" id = "attachAdditionalComments" class="btn btn-primary">Attach Additional Comments</button>
+					 </div>
+
+					  <div class="form-group row">
+					    <label for="outputSocial" class="col-sm-5 col-form-label">Current Files:</label>
+					    <div class="col-sm-7">
+					      <input type="files" class="form-control" id="outputFiles" name="outputFiles">
+					    </div>
+					  </div>
+					  
+					  <div class="form-group row">
+					 	 <button type="button" id = "attachAdditionalFiles" class="btn btn-primary">Attach Additional Files</button>
+					 </div>
+					  
+					  <div class="form-group row">
+					 	 <button type="submit" value="Submit" onclick="submit" id = "save" class="btn btn-primary">Save Changes</button>
+					 </div>
+					 <div class="form-group row">
+					 	 <button type="button" id = "cancel"class="btn btn-primary">Cancel</button>
+					 </div>
+
+	        		</div>
+	        	</form>
+
+			</div>
+	    </div>
+	    </div>
+	<!--Main Content end-->
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="./js/editApplicantRecordClient.js"></script>
