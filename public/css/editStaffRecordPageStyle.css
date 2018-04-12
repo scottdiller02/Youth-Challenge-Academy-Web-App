@@ -1,0 +1,30 @@
+img {
+	margin-left: 84%;
+	margin-right: auto;
+	display: block;
+	width: 12%;
+	height: 12%;
+}
+.thumbnail {
+	text-align: left;
+	position: relative;
+	width: 600px;
+	height: 420px;
+	margin: auto;
+}
+.well {
+	text-align: center;
+	position: relative;
+	width: 580px;
+	height: 350px;
+	margin: auto;
+}
+#deleteButton {
+	float: left;
+}
+#save{
+	float: right;
+}
+#cancel{
+	float: right;
+}

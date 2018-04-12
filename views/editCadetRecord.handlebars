@@ -1,34 +1,35 @@
 <div>
+	<br><br>
 	<!--Main Content-->
 		<div class="col-sm-8 col-md-8 col-sm-push-2 col-md-push-2">
 	    <div class="thumbnail" id="thumbnailEdit">
-	        <h3><font color = "#3F8EBF">&nbsp Edit Cadet Records</font></h3>
+	        <h3><font color = "#345487">&nbsp Edit Cadet Records</font></h3>
 	        <div class = "well" id="wellEdit">
 	        	
-	        	<form>
+	        	<form action="editCadetRecord" method="post">
 	        		<div class="col-sm-5 col-md-5">
 					  <div class="form-group row">
 					    <label for="outputLastName" class="col-sm-4 col-form-label">Last Name:</label>
 					    <div class="col-sm-8">
-					      <input type="lastName" class="form-control" id="outputLastName">
+					      <input type="lastName" class="form-control" id="outputLastName" name="outputLastName">
 					    </div>
 					  </div>
 					  <div class="form-group row">
 					    <label for="outputFirstName" class="col-sm-4 col-form-label">First Name:</label>
 					    <div class="col-sm-8">
-					      <input type="firstName" class="form-control" id="outputFirstName">
+					      <input type="firstName" class="form-control" id="outputFirstName" name="outputFirstName">
 					    </div>
 					  </div>
 					  <div class="form-group row">
 					    <label for="outputSocial" class="col-sm-4 col-form-label">SSN#:</label>
 					    <div class="col-sm-8">
-					      <input type="social" class="form-control" id="outputSocial">
+					      <input type="social" class="form-control" id="outputSocial" name="outputSocial">
 					    </div>
 					  </div>
 					  <div class="form-group row">
-					    <label for="outputLocation" class="col-sm-4 col-form-label">Location:</label>
+					    <label for="outputCampus" class="col-sm-4 col-form-label">Campus:</label>
 					    <div class="col-sm-8">
-					      <input type="location" class="form-control" id="outputLocation">
+					      <input type="campus" class="form-control" id="outputCampus" name="outputCampus">
 					    </div>
 					  </div>
 					  <br><br>
@@ -43,7 +44,7 @@
 					  <div class="form-group row">
 					    <label for="outputLastName" class="col-sm-5 col-form-label">Current Comment Files:</label>
 					    <div class="col-sm-7">
-					      <input type="lastName" class="form-control" id="outputLastName">
+					      <input type="comments" class="form-control" id="outputComments" name="outputComments">
 					    </div>
 					  </div>
 					 
@@ -54,7 +55,7 @@
 					  <div class="form-group row">
 					    <label for="outputSocial" class="col-sm-5 col-form-label">Current Files:</label>
 					    <div class="col-sm-7">
-					      <input type="social" class="form-control" id="outputSocial">
+					      <input type="files" class="form-control" id="outputFiles" name="outputFiles">
 					    </div>
 					  </div>
 					  
@@ -63,7 +64,7 @@
 					 </div>
 					  
 					  <div class="form-group row">
-					 	 <button type="button" id = "save" class="btn btn-primary">Save Changes</button>
+					 	 <button type="submit" value="Submit" onclick="submit" id = "save" class="btn btn-primary">Save Changes</button>
 					 </div>
 					 <div class="form-group row">
 					 	 <button type="button" id = "cancel"class="btn btn-primary">Cancel</button>
@@ -77,3 +78,7 @@
 	    </div>
 	<!--Main Content end-->
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="./js/editCadetRecordClient.js"></script>

@@ -1,7 +1,7 @@
 var arr=[];
 
 //trigger automatically..
-$(document).ready(function(){
+/*$(document).ready(function(){
 	var jqxhr=$.ajax("/getMenuItems")
 	.done(function(docs){
 		for(doc of docs)
@@ -11,7 +11,7 @@ $(document).ready(function(){
 	.fail(function(){
 		alert("Try Again");
 	})
-})
+})*/
 
 function generateMenuNum(){
 	var numS=localStorage.getItem("num");
