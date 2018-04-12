@@ -48,12 +48,11 @@ function showCadets()
 	else
 	{
 		//cadets=cadetStorage.split(",");
-		
+		if(localStorage.getItem("location") == ""){
 		for (let i in cadetsArr)
 		{
 			let item=cadetsArr[i];
-			
-
+			if(item.lastName == localStorage.getItem("lastName").replace(/"/g, "")){
 			info+=
 				`
 					<tr>
@@ -69,8 +68,32 @@ function showCadets()
 						<td>${item.departure}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
 					</tr>`;
-		}//end of loop
+		}}//end of loop
 		info+= `</table>`;
+		}
+		else{
+		for (let i in cadetsArr)
+		{
+			let item=cadetsArr[i];
+			if(item.lastName == localStorage.getItem("lastName").replace(/"/g, "") && item.city == localStorage.getItem("location").replace(/"/g, "")){
+			info+=
+				`
+					<tr>
+						<td>${item.company}</td>
+						<td>${item.firstName}</td>
+						<td>${item.lastName}</td>
+						<td>${item.DOB}</td>
+						<td>${item.age}</td>
+						<td>${item.race}</td>
+						<td>${item.sex}</td>
+						<td>${item.city}</td>
+						<td>${item.county}</td>
+						<td>${item.departure}</td>
+						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
+					</tr>`;
+		}}//end of loop
+		info+= `</table>`;
+		}
 		document.getElementById("viewCadets").innerHTML=info;
 	}
 }
