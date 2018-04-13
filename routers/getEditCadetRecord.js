@@ -15,8 +15,8 @@ router.post('/editCadetRecord', function(req, res) {
    	console.log(req.body);
 
    	var company=req.body.outputCompany;
-   	var fname=req.body.outputFirstName;
-   	var lname=req.body.outputLastName;
+   	var firstName=req.body.outputFirstName;
+   	var lastName=req.body.outputLastName;
    	var DOB=req.body.outputDOB;
    	var age=req.body.outputAge;
    	var race=req.body.outputRace;
@@ -30,7 +30,7 @@ router.post('/editCadetRecord', function(req, res) {
    	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
    	console.log(id);
 
-   	var update = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+   	var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
 
    	console.log(update);
 
