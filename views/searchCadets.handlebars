@@ -1,41 +1,36 @@
-{{!--applicantRecords.handlebars --}}
-
+{{!--cadetRecords.handlebars --}}
 <div>
 	<!--Main Content-->
 		<div class="col-sm-10 col-md-10">
 	    <div class="thumbnail" id="thumbnailRecord">
-	        <h3><font color = "#345487">&nbsp Applicant Records</font></h3>
+	        <h3><font color = "#345487">&nbsp Cadet Records</font></h3>
 	        <div class = "well" id="wellRecord">
-	        	<div class="col-sm-12 col-md-12" id="viewApplicants">
-/* master
 	        	<div class="col-sm-8 col-md-8" id="viewCadets">
-*/
 	        	<table class="table table-striped">
 					<tr>
+						<th>Company</th>
 						<th>First Name</th>
 						<th>Last Name</th>
-						<th>SSN</th>
-						<th>Campus</th>
+						<th>DOB</th>
 						<th>Age</th>
+						<th>Race</th>
 						<th>Sex</th>
+						<th>County</th>
+						<th>Departure</th>
 						<th>Select</th>
-						<th>View</th>
-					</tr>
-					{{#each infoApplicants}}
-/* master
 					</tr>
 					{{#each infoCadets}}
-*/
 					<tr>
+						<td>{{company}}</td>
 						<td>{{firstName}}</td>
 						<td>{{lastName}}</td>
-						<td>{{ssn}}</td>
-						<td>{{campus}}</td>
+						<td>{{DOB}}</td>
 						<td>{{age}}</td>
+						<td>{{race}}</td>
 						<td>{{sex}}</td>
+						<td>{{county}}</td>
+						<td>{{firstName}}</td>
 						<td><button type="button" class="btn btn-primary " onclick="goToEdit({{@index}})">Edit</button></td>
-						<td><button type="button" class="btn btn-primary " onclick="goToView({{@index}})">View</button></td>
-
 					</tr>
 					{{/each}}
 				</table>
@@ -48,8 +43,4 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src=""></script>
-<script type="text/javascript" src="./js/applicantRecordsClient.js"></script>
-/* master
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src="./cadetRecordsClient.js"></script>
-*/
+<script type="text/javascript" src="./js/searchCadetsClient.js"></script>

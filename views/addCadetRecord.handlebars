@@ -9,36 +9,37 @@
 			        <h3><font color = "#345487">&nbsp Add Cadet Record</font></h3>
 			        <div class = "well" id="wellAddApplicant">
 			        	
-			        	<form>
+
+			        	<form action="addCadet" method="post">
 			        		<div class="col-sm-5 col-md-5">
 							  <div class="form-group row">
 							    <label for="outputCompany" class="col-sm-5 col-form-label">Company:</label>
 							    <div class="col-sm-7">
-							      <input type="company" class="form-control" id="outputCompany">
+							      <input type="company" class="form-control" id="outputCompany" name="outputCompany">
 							    </div>
 							  </div>
 							  <div class="form-group row">
 							    <label for="outputLastName" class="col-sm-5 col-form-label">Last Name:</label>
 							    <div class="col-sm-7">
-							      <input type="lastName" class="form-control" id="outputLastName">
+							      <input type="lastName" class="form-control" id="outputLastName" name="outputLastName">
 							    </div>
 							  </div>
 							  <div class="form-group row">
 							    <label for="outputFirstName" class="col-sm-5 col-form-label">First Name:</label>
 							    <div class="col-sm-7">
-							      <input type="firstName" class="form-control" id="outputFirstName">
+							      <input type="firstName" class="form-control" id="outputFirstName" name="outputFirstName">
 							    </div>
 							  </div>
 							  <div class="form-group row">
 							    <label for="outputDob" class="col-sm-5 col-form-label">DOB:</label>
 							    <div class="col-sm-7">
-							      <input type="dob" class="form-control" id="outputDob">
+							      <input type="dob" class="form-control" id="outputDob" name="outputDob">
 							    </div>
 							  </div>
 							  <div class="form-group row">
 							    <label for="outputAge" class="col-sm-5 col-form-label">Age:</label>
 							    <div class="col-sm-7">
-							      <input type="age" class="form-control" id="outputAge">
+							      <input type="age" class="form-control" id="outputAge" name="outputAge">
 							    </div>
 							  </div>
 							  </div>
@@ -47,36 +48,47 @@
 								<div class="form-group row">
 								    <label for="outputRace" class="col-sm-4 col-form-label">Race:</label>
 								    <div class="col-sm-8">
-								      <input type="race" class="form-control" id="outputRace">
+								      <input type="race" class="form-control" id="outputRace" name="outputRace">
 								    </div>
 							  	</div>
 							  	<div class="form-group row">
 								    <label for="outputSex" class="col-sm-4 col-form-label">Sex:</label>
 								    <div class="col-sm-8">
-								      <input type="sex" class="form-control" id="OutputSex">
+								      <input type="sex" class="form-control" id="outputSex" name="outputSex">
+								    </div>
+							  	</div>
+							  	<div class="form-group row">
+								    <label for="outputCity" class="col-sm-4 col-form-label">City:</label>
+								    <div class="col-sm-8">
+								      <input type="city" class="form-control" id="outputCity" name="outputCity">
 								    </div>
 							  	</div>
 							  	<div class="form-group row">
 								    <label for="outputCounty" class="col-sm-4 col-form-label">County:</label>
 								    <div class="col-sm-8">
-								      <input type="county" class="form-control" id="outputCounty">
+								      <input type="county" class="form-control" id="outputCounty" name="outputCounty">
 								    </div>
 							  	</div>
 							  	<div class="form-group row">
 								    <label for="outputDeparture" class="col-sm-4 col-form-label">Departure:</label>
 								    <div class="col-sm-8">
+/*
 								      <input type="departure" class="form-control" id="outputDeparture">
 								    </div>
 							  	</div>
 							  	<div class="form-group row">
 							   		<button type="button" id = "attachFilesAddApplicant" class="btn btn-primary">Attach Files</button>
 							    </div>
+*/
+								      <input type="departure" class="form-control" id="outputDeparture" name="outputDeparture">
+								    </div>
+							  	</div>
 							 
 							</div>
 							<div class="col-sm-12 col-md-12">
 								<br>
-							   <button type="button" id = "cancelAddApplicant" class="btn btn-primary">Cancel</button>
-							   <button type="button" id = "saveAddApplicant" class="btn btn-primary">Save</button>
+							   <button type="button" id = "cancelAddCadet" class="btn btn-primary">Cancel</button>
+							   <button type="submit" value="Submit" onclick="submit" id = "saveAddCadet" class="btn btn-primary">Save</button>
 							</div>
 			        	</form>
 
@@ -87,3 +99,7 @@
 	</div>
 	<!--Main Content end-->
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="./js/addCadetClient.js"></script>

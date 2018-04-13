@@ -13,20 +13,25 @@ router.use(bodyParser.json());
 router.post('/editCadetRecord', function(req, res) {
    	var collection = db.getDb().collection('cadets');
    	console.log(req.body);
-   	//var _id=req.body.cadetID;
-   	var firstName=req.body.outputFirstName;
-   	var lastName=req.body.outputLastName;
-   	var ssn=req.body.outputSocial;
-   	var campus=req.body.outputCampus;
-   	//var age=req.body.outputAge;
-   	//var sex=req.body.outputSex;
+
+   	var company=req.body.outputCompany;
+   	var fname=req.body.outputFirstName;
+   	var lname=req.body.outputLastName;
+   	var DOB=req.body.outputDOB;
+   	var age=req.body.outputAge;
+   	var race=req.body.outputRace;
+   	var sex=req.body.outputSex;
+   	var city=req.body.outputCity;
+   	var county=req.body.outputCounty;
+   	var departure=req.body.outputDeparture;
 
    	//var id = JSON.parse(`{"_id":"${_id}"}`);
-   	var id = JSON.parse(`{"ssn":"${ssn}"}`);
+   	var id = JSON.parse(`{"DOB":"${DOB}"}`);
    	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
    	console.log(id);
 
-   	var update = JSON.parse(`{"lastName":"${lastName}","firstName":"${firstName}","campus":"${campus}"}`); //"SSN":"${SSN}","age":"${age}","sex":"${sex}",}
+   	var update = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+
    	console.log(update);
 
    	collection.updateOne(id, {$set:update}, function(err, res) {
