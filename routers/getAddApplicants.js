@@ -51,7 +51,7 @@ router.post("/addApplicant", function(req, res) {
    	var departure=req.body.outputDeparture;
 
    	
-   	var insert = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+   	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
    	console.log(insert);
 
    	collection.insertOne(insert, function(err, res) {
