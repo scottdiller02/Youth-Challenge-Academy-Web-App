@@ -2,6 +2,7 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
+
 var assert=require('assert')
 var bodyParser=require("body-Parser");
 router.use(bodyParser.urlencoded({
@@ -13,7 +14,7 @@ router.use(bodyParser.json());
 router.get("/getAddApplicant", function(req, res){
 	var collection1 = db.getDb().collection('applicants');
 	console.log(req.body);
-	
+
 	res.setHeader("Content-Type", "application/json");
 	collection1.find().toArray(function(err, docs){
 	//docs contains all records from phase1 in 
@@ -75,6 +76,7 @@ router.get("/applicants", function(req, res){
 		})
 	//})
 })
+
 
 */
 module.exports = router;

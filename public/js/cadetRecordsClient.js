@@ -36,6 +36,10 @@ function showCadets()
 						<th>City</th>
 						<th>County</th>
 						<th>Departure</th>
+						<th>SSN</th>
+						<th>ID</th>
+						<th>Edit</th>
+						<th>View</th>
 					</tr>
 			`;
 	
@@ -54,20 +58,21 @@ function showCadets()
 			info+=
 				`
 					<tr>
-
 						<td>${item.company}</td>
 						<td>${item.firstName}</td>
 						<td>${item.lastName}</td>
 						<td>${item.DOB}</td>
-
 						<td>${item.age}</td>
 						<td>${item.race}</td>
 						<td>${item.sex}</td>
 						<td>${item.city}</td>
 						<td>${item.county}</td>
 						<td>${item.departure}</td>
-						<td><button class="btn btn-primary" onclick="editCadet(${i});" >Edit</button></td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >View</button></td>
+
+						<td>${item.ssn}</td>
+						<td>${item.ID}</td>
+						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 
 					</tr>`;
 		}//end of loop
@@ -76,7 +81,7 @@ function showCadets()
 	}
 }
 
-function editCadet(item)
+function viewCadet(item)
 {
 	cadet = cadetsArr[item];
 	
@@ -102,7 +107,7 @@ function editCadet(item)
 
 	window.location="http://localhost:3000/editCadetRecord";
 }
-function viewCadet(item)
+function viewCadetProfile(item)
 {
 	cadet = cadetsArr[item];
 	
@@ -113,7 +118,6 @@ function viewCadet(item)
 	}
 	else
 	{
-
 		localStorage.setItem("company", JSON.stringify(cadet.company));
 		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
 		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));

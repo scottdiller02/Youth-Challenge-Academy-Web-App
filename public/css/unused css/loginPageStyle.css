@@ -1,0 +1,23 @@
+img {
+	margin-left: 84%;
+	margin-right: auto;
+	margin-top: 3%;
+	display: block;
+	width: 12%;
+	height: 12%;
+}
+#slogan {
+	text-align: center;
+	padding-top: 10%;
+	font-size: 14pt;
+}
+.well {
+	position: relative;
+	width: 350px;
+	height: 250px;
+	margin: auto;
+}
+.btn{
+	float:right;
+	text-align: right;
+}
