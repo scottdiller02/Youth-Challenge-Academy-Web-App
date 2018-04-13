@@ -31,7 +31,8 @@
 	height: 430px;
 	margin: auto;
 }
-recruiterHomeLogo{
+
+#recruiterHomeLogo{
 	display: block;
 	float: center;
 	width: 60%;
