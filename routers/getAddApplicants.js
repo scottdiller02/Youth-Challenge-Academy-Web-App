@@ -2,9 +2,18 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
- 
+var assert=require('assert')
+var bodyParser=require("body-Parser");
+router.use(bodyParser.urlencoded({
+	extended: true
+}));
+router.use(bodyParser.json());
+
+/*
 router.get("/getAddApplicant", function(req, res){
-	var collection1 = db.getDb().collection('applicants')
+	var collection1 = db.getDb().collection('applicants');
+	console.log(req.body);
+	
 	res.setHeader("Content-Type", "application/json");
 	collection1.find().toArray(function(err, docs){
 	//docs contains all records from phase1 in 
@@ -22,9 +31,40 @@ router.get("/getAddApplicant", function(req, res){
 	//info2.push(doc2);
 	//res.json(info2);
 	//})
-})
+	
+});
+*/
+router.post("/addApplicant", function(req, res) {
+	//console.log(req.body);
+	
+   	var collection = db.getDb().collection('applicants');
+   	//var _id=req.body.cadetID;
+   	var company=req.body.outputCompany;
+   	var fname=req.body.outputFirstName;
+   	var lname=req.body.outputLastName;
+   	var DOB=req.body.outputDob;
+   	var age=req.body.outputAge;
+   	var race=req.body.outputRace;
+   	var sex=req.body.outputSex;
+   	var county=req.body.outputCounty;
+   	var departure=req.body.outputDeparture;
 
+   	
+   	var insert = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","county":"${county}","departure":"${departure}"}`);
+   	console.log(insert);
 
+   	collection.insertOne(insert, function(err, res) {
+    	if (err) 
+    		throw err;
+   		console.log("1 document added");
+    	//db.close();
+  	});
+  	res.redirect('/applicantRecords');
+	
+	
+});
+
+/*
 router.get("/applicants", function(req, res){
 	var collection1 = db.getDb().collection('applicants');
 
@@ -35,5 +75,5 @@ router.get("/applicants", function(req, res){
 	//})
 })
 
-
-module.exports = router
+*/
+module.exports = router;

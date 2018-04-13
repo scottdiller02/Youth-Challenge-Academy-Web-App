@@ -2,68 +2,109 @@
 	<br><br>
 	<!--Main Content-->
 		<div class="col-sm-8 col-md-8 col-sm-push-2 col-md-push-2">
-	    <div class="thumbnail" id="thumbnailEdit">
-	        <h3><font color = "#345487">&nbsp Edit Cadet Records</font></h3>
-	        <div class = "well" id="wellEdit">
+	    <div class="thumbnail" id="thumbnailProfile">
+	        <h3><font color = "#345487">&nbsp Edit Cadet Profile</font></h3>
+	        <div class = "well" id="wellProfile">
 	        	
 	        	<form action="editCadetRecord" method="post">
-	        		<div class="col-sm-5 col-md-5">
-					  <div class="form-group row">
-					    <label for="outputLastName" class="col-sm-4 col-form-label">Last Name:</label>
-					    <div class="col-sm-8">
-					      <input type="lastName" class="form-control" id="outputLastName" name="outputLastName">
+
+	        	<div class="col-sm-5 col-md-5">
+	        		<div class="form-group row">
+	        			<img src="./images/profilePicture.png" class="img-fluid" id="profilePicture" alt="Cadet Picture">
+	        		</div>
+
+	        		<div class="form-group row">
+					    <label for="outputCompany" class="col-sm-5 col-form-label">Company:</label>
+					    <div class="col-sm-7">
+					      <input type="company" class="form-control" id="outputCompany" name="outputCompany">
 					    </div>
 					  </div>
+
 					  <div class="form-group row">
-					    <label for="outputFirstName" class="col-sm-4 col-form-label">First Name:</label>
-					    <div class="col-sm-8">
+					    <label for="outputLastName" class="col-sm-5 col-form-label">Last Name:</label>
+					    <div class="col-sm-7">
+					      <input type="LastName" class="form-control" id="outputLastName" name="outputLastName">
+					    </div>
+					  </div>
+
+	        		<div class="form-group row">
+					    <label for="outputFirstName" class="col-sm-5 col-form-label">First Name:</label>
+					    <div class="col-sm-7">
 					      <input type="firstName" class="form-control" id="outputFirstName" name="outputFirstName">
 					    </div>
 					  </div>
+
 					  <div class="form-group row">
-					    <label for="outputSocial" class="col-sm-4 col-form-label">SSN#:</label>
-					    <div class="col-sm-8">
-					      <input type="social" class="form-control" id="outputSocial" name="outputSocial">
+
+					    <label for="outputDOB" class="col-sm-5 col-form-label">DOB:</label>
+					    <div class="col-sm-7">
+					      <input type="DOB" class="form-control" id="outputDOB" name="outputDOB">
+
 					    </div>
 					  </div>
-					  <div class="form-group row">
-					    <label for="outputCampus" class="col-sm-4 col-form-label">Campus:</label>
-					    <div class="col-sm-8">
-					      <input type="campus" class="form-control" id="outputCampus" name="outputCampus">
-					    </div>
-					  </div>
-					  <br><br>
-					  <div class="form-group row">
-					 	 <button type="button" id = "deleteButton" class="btn btn-primary">Delete Record</button>
-					 </div>
-	        		</div>
+
+
+
+	        	</div>
 
 
 
 	        		<div class="col-sm-7 col-md-7">
-					  <div class="form-group row">
-					    <label for="outputLastName" class="col-sm-5 col-form-label">Current Comment Files:</label>
+
+	        		  <div class="form-group row">
+					    <label for="outputAge" class="col-sm-5 col-form-label">Age:</label>
 					    <div class="col-sm-7">
-					      <input type="comments" class="form-control" id="outputComments" name="outputComments">
+					      <input type="age" class="form-control" id="outputAge" name="outputAge">
 					    </div>
 					  </div>
-					 
-					 <div class="form-group row">
-					 	 <button type="button" id = "attachAdditionalComments" class="btn btn-primary">Attach Additional Comments</button>
-					 </div>
+
+					  
 
 					  <div class="form-group row">
-					    <label for="outputSocial" class="col-sm-5 col-form-label">Current Files:</label>
+					    <label for="outputRace" class="col-sm-5 col-form-label">Race:</label>
 					    <div class="col-sm-7">
-					      <input type="files" class="form-control" id="outputFiles" name="outputFiles">
+					      <input type="race" class="form-control" id="outputRace" name="outputRace">
+					    </div>
+					  </div>
+
+					  <div class="form-group row">
+					    <label for="outputSex" class="col-sm-5 col-form-label">Sex:</label>
+					    <div class="col-sm-7">
+					      <input type="sex" class="form-control" id="outputSex" name="outputSex">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group row">
-					 	 <button type="button" id = "attachAdditionalFiles" class="btn btn-primary">Attach Additional Files</button>
-					 </div>
-					  
+					    <label for="outputCity" class="col-sm-5 col-form-label">City:</label>
+					    <div class="col-sm-7">
+					      <input type="city" class="form-control" id="outputCity" name="outputCity">
+					    </div>
+					  </div>
+
 					  <div class="form-group row">
+					    <label for="outputCounty" class="col-sm-5 col-form-label">County:</label>
+					    <div class="col-sm-7">
+					      <input type="county" class="form-control" id="outputCounty" name="outputCounty">
+					    </div>
+					  </div>
+
+					  <div class="form-group row">
+					    <label for="outputDeparture" class="col-sm-5 col-form-label">Departure:</label>
+					    <div class="col-sm-7">
+					      <input type="departure" class="form-control" id="outputDeparture" name="outputDeparture">
+					    </div>
+					  </div>
+
+					  <div class="form-group row">
+					    <label for="outputNotes" class="col-sm-5 col-form-label">Notes:</label>
+					    <div class="col-sm-7">
+					      <input type="notes" class="form-control" id="outputNotes">
+					    </div>
+					  </div>
+					  <div>
+					  </div>
+
+					   <div class="form-group row">
 					 	 <button type="submit" value="Submit" onclick="submit" id = "save" class="btn btn-primary">Save Changes</button>
 					 </div>
 					 <div class="form-group row">
