@@ -22,10 +22,7 @@ function registerButtonEvents()
 
 function showCadets()
 {
-	//let cadetStorage=localStorage.getItem("cadets");
-	//let cadetStorage= cadetsArr;
-	//console.log(cadetsArr);
-	//let cadets=[];
+	
 	let info=`
 					<table class="table table-striped">
 					<tr>
@@ -47,7 +44,7 @@ function showCadets()
 		document.getElementById("viewCadets").innerHTML="<h2>Error showing cadets</h2>";
 	else
 	{
-		//cadets=cadetStorage.split(",");
+		
 		
 		for (let i in cadetsArr)
 		{
@@ -57,10 +54,12 @@ function showCadets()
 			info+=
 				`
 					<tr>
+
 						<td>${item.company}</td>
 						<td>${item.firstName}</td>
 						<td>${item.lastName}</td>
 						<td>${item.DOB}</td>
+
 						<td>${item.age}</td>
 						<td>${item.race}</td>
 						<td>${item.sex}</td>
@@ -77,17 +76,16 @@ function showCadets()
 
 function viewCadet(item)
 {
-	//var cadets=localStorage.getItem("cadets");
-	//cadets=cadets.split(",");
 	cadet = cadetsArr[item];
 	
-	//cadets.splice(rID,1);
+
 	if(cadetsArr.length==0)
 	{
 		clearCart();
 	}
 	else
 	{
+
 		localStorage.setItem("company", JSON.stringify(cadet.company));
 		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
 		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
@@ -125,20 +123,4 @@ function editCadet(item)
 {
 	window.location="http://localhost:3000/editCadetRecord";
 
-	/*var cart=localStorage.getItem("cart");
-	cart=cart.split(",");
-	
-	cart.splice(item, 1);
-	if(cart.length==0)
-	{
-		clearCart();
-	}
-	else
-	{
-		localStorage.setItem("cart", cart);
-		localStorage.setItem("number", cart.length);
-	}
-
-	showCart();
-	*/
 }

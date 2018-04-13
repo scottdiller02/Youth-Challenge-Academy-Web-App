@@ -6,12 +6,18 @@ $(document).ready(function(){
 });
 
 function showCadetInfo(){
+
 	var company = localStorage.getItem("company").replace(/"/g, "");
 	document.getElementById("outputCompany").value= company;
+
+	//var ID = localStorage.getItem("id").replace(/"/g, "");
+	//document.getElementById("cadetID").innerHTML="Cadet ID: " + ID;
+
 	var lastName = localStorage.getItem("lastName").replace(/"/g, "");
 	document.getElementById("outputLastName").value = lastName;
 	var firstName = localStorage.getItem("firstName").replace(/"/g, "");
 	document.getElementById("outputFirstName").value = firstName;
+
 	var dob = localStorage.getItem("DOB").replace(/"/g, "");
 	document.getElementById("outputDOB").value = dob;
 	var age = localStorage.getItem("age").replace(/"/g, "");
@@ -29,18 +35,15 @@ function showCadetInfo(){
 
 
 
+
 }
 
 //function saveChanges(){
 $('#save').click(function(){
-	/*console.log("it works");
-	var lname = $('#outputLastName').val();
-	var fname = $('#outputFirstName').val();
-	var social = $('#outputSocial').val();
-	var location = $('#outputLocation').val();
-	*/
+
 	var jqxhr = $.ajax( "/editCadetRecord" ).done(function() {
 		console.log("success");
 	})
+
 });
 //}
