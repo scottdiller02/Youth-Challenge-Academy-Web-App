@@ -2,38 +2,40 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
+var assert=require('assert')
+var bodyParser=require("body-Parser");
+router.use(bodyParser.urlencoded({
+	extended: true
+}));
+router.use(bodyParser.json());
  
-router.get("/getEditStaffRecord", function(req, res){
-	var collection1 = db.getDb().collection('staff')
-	res.setHeader("Content-Type", "application/json");
-	collection1.find().toArray(function(err, docs){
-	//docs contains all records from phase1 in 
-	//js array format
-	var info1=[];
-	for(doc1 of docs1) 
-	info1.push(doc1);
-	res.json(info1);
-	})
-	//collection2.find().toArray(function(err, docs){
-	//docs contains all records from phase2 in 
-	//js array format
-	//var info2=[];
-	//for(doc2 of docs2) 
-	//info2.push(doc2);
-	//res.json(info2);
-	//})
-})
+
+router.post('/editStaffRecord', function(req, res) {
+   	var collection = db.getDb().collection('staff');
+   	console.log(req.body);
+
+   	var email=req.body.outputEmail;
+   	var password=req.body.outputPassword;
+   	var role=req.body.outputRole;
 
 
-router.get("/staff", function(req, res){
-	var collection1 = db.getDb().collection('staff');
+   	//var id = JSON.parse(`{"_id":"${_id}"}`);
+   	var id = JSON.parse(`{"email":"${email}"}`);
+   	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
+   	console.log(id);
 
-	collection1.find().toArray(function(err, docs1){
-		//collection2.find().toArray(function(err, docs2){
-			res.render('staff', {infoP1: docs1, infoP2: docs2})
-		})
-	//})
-})
+   	var update = JSON.parse(`{"password":"${password}","role":"${role}"}`);
 
+   	console.log(update);
 
-module.exports = router
+   	collection.updateOne(id, {$set:update}, function(err, res) {
+    	if (err) 
+    		throw err;
+   		console.log("1 document updated");
+    	//db.close();
+  	});
+  	res.redirect('/staffRecords');
+
+});
+
+module.exports = router;

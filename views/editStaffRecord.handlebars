@@ -6,47 +6,29 @@
 	        <h3><font color = "#345487">&nbsp Edit Staff Records</font></h3>
 	        <div class = "well" id="wellEdit2">
 	        	
-	        	<form>
+	        	<form action="editStaffRecord" method="post">
 	        		<div class="col-sm-12 col-md-12">
 					  <div class="form-group row">
-					    <label for="outputLastName" class="col-sm-4 col-form-label">Last Name:</label>
+					    <label for="outputEmail" class="col-sm-4 col-form-label">Email:</label>
 					    <div class="col-sm-8">
-					      <input type="lastName" class="form-control" id="outputLastName">
+					      <input type="email" class="form-control" id="outputEmail" name="outputEmail">
 					    </div>
 					  </div>
 					  <div class="form-group row">
-					    <label for="outputFirstName" class="col-sm-4 col-form-label">First Name:</label>
+					    <label for="outputPassword" class="col-sm-4 col-form-label">Password:</label>
 					    <div class="col-sm-8">
-					      <input type="firstName" class="form-control" id="outputFirstName">
+					      <input type="staffPassword" class="form-control" id="outputPassword" name="outputPassword">
 					    </div>
 					  </div>
 					  <div class="form-group row">
-					    <label for="outputSocial" class="col-sm-4 col-form-label">SSN#:</label>
+					    <label for="outputRole" class="col-sm-4 col-form-label">Role:</label>
 					    <div class="col-sm-8">
-					      <input type="social" class="form-control" id="outputSocial">
-					    </div>
-					  </div>
-					  <div class="form-group row">
-					    <label for="outputLocation" class="col-sm-4 col-form-label">Location:</label>
-					    <div class="col-sm-8">
-					      <input type="location" class="form-control" id="outputLocation">
-					    </div>
-					  </div>
-					  <div class="form-group row">
-					    <label for="role" class="col-sm-4 col-form-label">Role:</label>
-					    <div class="col-sm-8">
-					      
-							  <label><input type="radio" name="optradio">&nbspCounselor</label>
-							
-							  <label><input type="radio" name="optradio">&nbspRecruiter</label>
-							
-							  <label><input type="radio" name="optradio">&nbspAdmin</label>
-							
+					      <input type="role" class="form-control" id="outputRole" name="outputRole">
 					    </div>
 					  </div>
 					 
 					  <div class="form-group row">
-					  	<button type="button" id = "save" class="btn btn-primary">Save Changes</button>
+					  	<button type="submit" value="Submit" onclick="submit" id = "save" class="btn btn-primary">Save Changes</button>
 					  </div>
 					  <div class="form-group row">
 					 	 <button type="button" id = "deleteButton" class="btn btn-primary">Delete Record</button>
@@ -60,3 +42,7 @@
 	    </div>
 	<!--Main Content end-->
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="./js/editStaffRecordClient.js"></script>
