@@ -26,12 +26,16 @@ function showCadets()
 	let info=`
 					<table class="table table-striped">
 					<tr>
+						<th>Company</th>
 						<th>First Name</th>
 						<th>Last Name</th>
-						<th>SSN</th>
-						<th>Campus</th>
+						<th>DOB</th>
 						<th>Age</th>
+						<th>Race</th>
 						<th>Sex</th>
+						<th>City</th>
+						<th>County</th>
+						<th>Departure</th>
 						<th>Edit</th>
 						<th>View</th>
 					</tr>
@@ -52,12 +56,16 @@ function showCadets()
 			info+=
 				`
 					<tr>
+						<td>${item.company}</td>
 						<td>${item.firstName}</td>
 						<td>${item.lastName}</td>
-						<td>${item.ssn}</td>
-						<td>${item.campus}</td>
+						<td>${item.DOB}</td>
 						<td>${item.age}</td>
+						<td>${item.race}</td>
 						<td>${item.sex}</td>
+						<td>${item.city}</td>
+						<td>${item.county}</td>
+						<td>${item.departure}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
 						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 					</tr>`;
@@ -78,13 +86,16 @@ function viewCadet(item)
 	}
 	else
 	{
-		localStorage.setItem("id", JSON.stringify(cadet._id));
+		localStorage.setItem("company", JSON.stringify(cadet.company));
 		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
 		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
-		localStorage.setItem("ssn", JSON.stringify(cadet.ssn));
-		localStorage.setItem("campus", JSON.stringify(cadet.campus));
+		localStorage.setItem("DOB", JSON.stringify(cadet.DOB));
 		localStorage.setItem("age", JSON.stringify(cadet.age));
+		localStorage.setItem("race", JSON.stringify(cadet.race));
 		localStorage.setItem("sex", JSON.stringify(cadet.sex));
+		localStorage.setItem("city", JSON.stringify(cadet.city));
+		localStorage.setItem("county", JSON.stringify(cadet.county));
+		localStorage.setItem("departure", JSON.stringify(cadet.departure));
 	}
 
 	editCadet(item);

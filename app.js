@@ -128,7 +128,7 @@ app.get("/searchCadets",function(req,res){
 app.get("/cadetProfile",function(req,res){
 		console.log("Coming a search request!");
 	res.render(`cadetProfile`);
-	});
+});
 
 
 app.set('db',db);
