@@ -40,17 +40,18 @@ router.post("/addApplicant", function(req, res) {
    	var collection = db.getDb().collection('applicants');
    	//var _id=req.body.cadetID;
    	var company=req.body.outputCompany;
-   	var fname=req.body.outputFirstName;
-   	var lname=req.body.outputLastName;
+   	var firstName=req.body.outputFirstName;
+   	var lastName=req.body.outputLastName;
    	var DOB=req.body.outputDob;
    	var age=req.body.outputAge;
    	var race=req.body.outputRace;
    	var sex=req.body.outputSex;
+   	var city=req.body.outputCity;
    	var county=req.body.outputCounty;
    	var departure=req.body.outputDeparture;
 
    	
-   	var insert = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","county":"${county}","departure":"${departure}"}`);
+   	var insert = JSON.parse(`{"company":"${company}","lname":"${lname}","fname":"${fname}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
    	console.log(insert);
 
    	collection.insertOne(insert, function(err, res) {

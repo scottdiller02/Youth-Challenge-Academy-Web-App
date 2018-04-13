@@ -69,11 +69,24 @@ recruiterHomeLogo{
 	margin-left: 162px;
 	width: 265px;
 }
+#attachFilesAddCadet{
+	float: left;
+	margin-left: 162px;
+	width: 265px;
+}
 #saveAddApplicant{
 	float: right;
 	width: 75px;
 }
+#saveAddCadet{
+	float: right;
+	width: 75px;
+}
 #cancelAddApplicant{
+	float: left;
+	width:75px;
+}
+#cancelAddCadet{
 	float: left;
 	width:75px;
 }

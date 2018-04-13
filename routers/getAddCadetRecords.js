@@ -2,9 +2,18 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
- 
-router.get("/getAddCadetRecords", function(req, res){
-	var collection1 = db.getDb().collection('cadets')
+var assert=require('assert')
+var bodyParser=require("body-Parser");
+router.use(bodyParser.urlencoded({
+	extended: true
+}));
+router.use(bodyParser.json());
+
+/*
+router.get("/getAddApplicant", function(req, res){
+	var collection1 = db.getDb().collection('applicants');
+	console.log(req.body);
+	
 	res.setHeader("Content-Type", "application/json");
 	collection1.find().toArray(function(err, docs){
 	//docs contains all records from phase1 in 
@@ -22,18 +31,50 @@ router.get("/getAddCadetRecords", function(req, res){
 	//info2.push(doc2);
 	//res.json(info2);
 	//})
-})
+	
+});
+*/
+router.post("/addCadet", function(req, res) {
+	//console.log(req.body);
+	
+   	var collection = db.getDb().collection('cadets');
+   	//var _id=req.body.cadetID;
+   	var company=req.body.outputCompany;
+   	var firstName=req.body.outputFirstName;
+   	var lastName=req.body.outputLastName;
+   	var DOB=req.body.outputDob;
+   	var age=req.body.outputAge;
+   	var race=req.body.outputRace;
+   	var sex=req.body.outputSex;
+   	var city=req.body.outputCity;
+   	var county=req.body.outputCounty;
+   	var departure=req.body.outputDeparture;
 
+   	
+   	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+   	console.log(insert);
 
-router.get("/cadets", function(req, res){
-	var collection1 = db.getDb().collection('cadets');
+   	collection.insertOne(insert, function(err, res) {
+    	if (err) 
+    		throw err;
+   		console.log("1 document added");
+    	//db.close();
+  	});
+  	res.redirect('/cadetRecords');
+	
+	
+});
+
+/*
+router.get("/applicants", function(req, res){
+	var collection1 = db.getDb().collection('applicants');
 
 	collection1.find().toArray(function(err, docs1){
 		//collection2.find().toArray(function(err, docs2){
-			res.render('cadets', {infoP1: docs1, infoP2: docs2})
+			res.render('applicants', {infoP1: docs1, infoP2: docs2})
 		})
 	//})
 })
 
-
-module.exports = router
+*/
+module.exports = router;
