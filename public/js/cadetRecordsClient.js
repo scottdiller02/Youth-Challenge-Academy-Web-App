@@ -66,7 +66,9 @@ function showCadets()
 						<td>${item.city}</td>
 						<td>${item.county}</td>
 						<td>${item.departure}</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="editCadet(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >View</button></td>
+
 					</tr>`;
 		}//end of loop
 		info+= `</table>`;
@@ -74,6 +76,32 @@ function showCadets()
 	}
 }
 
+function editCadet(item)
+{
+	cadet = cadetsArr[item];
+	
+
+	if(cadetsArr.length==0)
+	{
+		clearCart();
+	}
+	else
+	{
+
+		localStorage.setItem("company", JSON.stringify(cadet.company));
+		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
+		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
+		localStorage.setItem("DOB", JSON.stringify(cadet.DOB));
+		localStorage.setItem("age", JSON.stringify(cadet.age));
+		localStorage.setItem("race", JSON.stringify(cadet.race));
+		localStorage.setItem("sex", JSON.stringify(cadet.sex));
+		localStorage.setItem("city", JSON.stringify(cadet.city));
+		localStorage.setItem("county", JSON.stringify(cadet.county));
+		localStorage.setItem("departure", JSON.stringify(cadet.departure));
+	}
+
+	window.location="http://localhost:3000/editCadetRecord";
+}
 function viewCadet(item)
 {
 	cadet = cadetsArr[item];
@@ -98,7 +126,7 @@ function viewCadet(item)
 		localStorage.setItem("departure", JSON.stringify(cadet.departure));
 	}
 
-	editCadet(item);
+	window.location="http://localhost:3000/cadetProfile";
 }
 
 function getMenuArr(){
@@ -117,10 +145,4 @@ function getMenuArr(){
 
 
    
-}
-
-function editCadet(item)
-{
-	window.location="http://localhost:3000/editCadetRecord";
-
 }
