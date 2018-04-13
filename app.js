@@ -125,5 +125,10 @@ app.get("/searchCadets",function(req,res){
 	res.render(`searchCadets`);
 });
 
+app.get("/cadetProfile",function(req,res){
+		console.log("Coming a search request!");
+	res.render(`cadetProfile`);
+});
+
 app.set('db',db);
 module.exports.app=app;

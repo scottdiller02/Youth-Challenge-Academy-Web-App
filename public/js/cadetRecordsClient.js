@@ -88,13 +88,16 @@ function viewCadet(item)
 	}
 	else
 	{
-		localStorage.setItem("id", JSON.stringify(cadet._id));
-		localStorage.setItem("fname", JSON.stringify(cadet.fname));
-		localStorage.setItem("lname", JSON.stringify(cadet.lname));
-		localStorage.setItem("SSN", JSON.stringify(cadet.SSN));
-		localStorage.setItem("location", JSON.stringify(cadet.location));
+		localStorage.setItem("company", JSON.stringify(cadet.company));
+		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
+		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
+		localStorage.setItem("DOB", JSON.stringify(cadet.DOB));
 		localStorage.setItem("age", JSON.stringify(cadet.age));
+		localStorage.setItem("race", JSON.stringify(cadet.race));
 		localStorage.setItem("sex", JSON.stringify(cadet.sex));
+		localStorage.setItem("city", JSON.stringify(cadet.city));
+		localStorage.setItem("county", JSON.stringify(cadet.county));
+		localStorage.setItem("departure", JSON.stringify(cadet.departure));
 	}
 
 	editCadet(item);
