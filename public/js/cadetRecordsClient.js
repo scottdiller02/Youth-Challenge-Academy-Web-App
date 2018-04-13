@@ -36,6 +36,8 @@ function showCadets()
 						<th>City</th>
 						<th>County</th>
 						<th>Departure</th>
+						<th>SSN</th>
+						<th>ID</th>
 						<th>Edit</th>
 						<th>View</th>
 					</tr>
@@ -66,6 +68,8 @@ function showCadets()
 						<td>${item.city}</td>
 						<td>${item.county}</td>
 						<td>${item.departure}</td>
+						<td>${item.ssn}</td>
+						<td>${item.ID}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
 						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 					</tr>`;
