@@ -17,7 +17,6 @@ function showCadetInfo(){
 	document.getElementById("outputLastName").value = lastName;
 	var firstName = localStorage.getItem("firstName").replace(/"/g, "");
 	document.getElementById("outputFirstName").value = firstName;
-
 	var dob = localStorage.getItem("DOB").replace(/"/g, "");
 	document.getElementById("outputDOB").value = dob;
 	var age = localStorage.getItem("age").replace(/"/g, "");
@@ -32,7 +31,6 @@ function showCadetInfo(){
 	document.getElementById("outputCounty").value = county;
 	var departure = localStorage.getItem("departure").replace(/"/g, "");;
 	document.getElementById("outputDeparture").value = departure;
-
 
 
 
