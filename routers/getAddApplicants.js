@@ -37,7 +37,7 @@ router.get("/getAddApplicant", function(req, res){
 });
 */
 router.post("/addApplicant", function(req, res) {
-	//console.log(req.body);
+	console.log(req.body);
 	
    	var collection = db.getDb().collection('applicants');
    	//var _id=req.body.cadetID;
@@ -51,9 +51,19 @@ router.post("/addApplicant", function(req, res) {
    	var city=req.body.outputCity;
    	var county=req.body.outputCounty;
    	var departure=req.body.outputDeparture;
-   	
-
-   	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+   	var id = 5;
+   	//TODO
+   	/*
+   	collection.count(function(err, res) {
+   		var collection2 = db.getDb().collection('cadets');
+   		collection2.count(function(err2, res2) {
+   			id = res + res2 + 1;
+   			console.log(id);
+   		});
+   	});*/
+	console.log(id);
+   	/*
+   	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}", "id": "${id}"}`);
    	console.log(insert);
 
    	collection.insertOne(insert, function(err, res) {
@@ -63,7 +73,7 @@ router.post("/addApplicant", function(req, res) {
     	//db.close();
   	});
   	res.redirect('/applicantRecords');
-	
+	*/
 	
 });
 

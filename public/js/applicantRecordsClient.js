@@ -26,17 +26,20 @@ function showApplicants()
 	let info=`
 					<table class="table table-striped">
 					<tr>
+						<th>Company</th>
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>DOB</th>
-						<th>Campus</th>
 						<th>Age</th>
 						<th>Sex</th>
 						<th>Race</th>
 						<th>City</th>
 						<th>County</th>
+						<th>Departure</th>
+						<th>ID</th>
 						<th>Edit</th>
 						<th>View</th>
+						<th>Update to Cadet</th>
 					</tr>
 			`;
 	
@@ -55,25 +58,54 @@ function showApplicants()
 			info+=
 				`
 					<tr>
+						<td>${item.company}</td>
 						<td>${item.firstName}</td>
 						<td>${item.lastName}</td>
 						<td>${item.DOB}</td>
-						<td>${item.campus}</td>
 						<td>${item.age}</td>
 						<td>${item.sex}</td>
 						<td>${item.race}</td>
 						<td>${item.city}</td>
 						<td>${item.county}</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
-						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
+						<td>${item.departure}</td>
+						<td>${item.id}</td>
+						<td><button class="btn btn-primary" onclick="editApplicant(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="viewApplicantProfile(${i});" >View</button></td>
+						<td><button class="btn btn-primary" onclick="updateApplicant(${i});" >Update</button></td>
 					</tr>`;
 		}//end of loop
 		info+= `</table>`;
 		document.getElementById("viewApplicants").innerHTML=info;
 	}
 }
+function updateApplicant(item){
+	applicant = applicantsArr[item];
+	
 
-function viewApplicants(item)
+	if(applicantsArr.length==0)
+	{
+		clearCart();
+	}
+	else
+	{
+
+		localStorage.setItem("company", JSON.stringify(applicant.company));
+		localStorage.setItem("firstName", JSON.stringify(applicant.firstName));
+		localStorage.setItem("lastName", JSON.stringify(applicant.lastName));
+		localStorage.setItem("DOB", JSON.stringify(applicant.DOB));
+		localStorage.setItem("age", JSON.stringify(applicant.age));
+		localStorage.setItem("sex", JSON.stringify(applicant.sex));
+		localStorage.setItem("race", JSON.stringify(applicant.race));
+		localStorage.setItem("city", JSON.stringify(applicant.city));
+		localStorage.setItem("county", JSON.stringify(applicant.county));
+		localStorage.setItem("departure", JSON.stringify(applicant.departure));
+		localStorage.setItem("id", JSON.stringify(applicant.id));
+	}
+
+	editApplicant();
+}
+
+function editApplicant(item)
 {
 	applicant = applicantsArr[item];
 	
@@ -84,19 +116,49 @@ function viewApplicants(item)
 	}
 	else
 	{
-		localStorage.setItem("id", JSON.stringify(applicant._id));
+
+		localStorage.setItem("company", JSON.stringify(applicant.company));
 		localStorage.setItem("firstName", JSON.stringify(applicant.firstName));
 		localStorage.setItem("lastName", JSON.stringify(applicant.lastName));
 		localStorage.setItem("DOB", JSON.stringify(applicant.DOB));
-		localStorage.setItem("campus", JSON.stringify(applicant.campus));
 		localStorage.setItem("age", JSON.stringify(applicant.age));
 		localStorage.setItem("sex", JSON.stringify(applicant.sex));
 		localStorage.setItem("race", JSON.stringify(applicant.race));
 		localStorage.setItem("city", JSON.stringify(applicant.city));
 		localStorage.setItem("county", JSON.stringify(applicant.county));
+		localStorage.setItem("departure", JSON.stringify(applicant.departure));
+		localStorage.setItem("id", JSON.stringify(applicant.id));
 	}
 
-	editApplicant(item);
+	window.location="http://localhost:3000/editApplicantRecord";
+}
+
+function viewApplicantProfile(item)
+{
+	applicant = applicantsArr[item];
+	
+
+	if(applicantsArr.length==0)
+	{
+		clearCart();
+	}
+	else
+	{
+
+		localStorage.setItem("company", JSON.stringify(applicant.company));
+		localStorage.setItem("firstName", JSON.stringify(applicant.firstName));
+		localStorage.setItem("lastName", JSON.stringify(applicant.lastName));
+		localStorage.setItem("DOB", JSON.stringify(applicant.DOB));
+		localStorage.setItem("age", JSON.stringify(applicant.age));
+		localStorage.setItem("sex", JSON.stringify(applicant.sex));
+		localStorage.setItem("race", JSON.stringify(applicant.race));
+		localStorage.setItem("city", JSON.stringify(applicant.city));
+		localStorage.setItem("county", JSON.stringify(applicant.county));
+		localStorage.setItem("departure", JSON.stringify(applicant.departure));
+		localStorage.setItem("id", JSON.stringify(applicant.id));
+	}
+
+	window.location="http://localhost:3000/applicantProfile";
 }
 
 function getMenuArr(){
@@ -115,10 +177,4 @@ function getMenuArr(){
 
 
    
-}
-
-function editApplicant(item)
-{
-	window.location="http://localhost:3000/editApplicantRecord";
-
 }

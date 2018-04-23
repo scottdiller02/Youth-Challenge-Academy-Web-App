@@ -10,33 +10,37 @@ router.use(bodyParser.urlencoded({
 router.use(bodyParser.json());
  
 
-router.post('/editCadetRecord', function(req, res) {
-   	var collection = db.getDb().collection('cadets');
-   	console.log(req.body);
-   	//var _id=req.body.cadetID;
-   	var firstName=req.body.outputFirstName;
-   	var lastName=req.body.outputLastName;
-   	var ssn=req.body.outputSocial;
-   	var campus=req.body.outputCampus;
-   	//var age=req.body.outputAge;
-   	//var sex=req.body.outputSex;
+router.post('/editApplicantRecord', function(req, res) {
+   	var collection = db.getDb().collection('applicants');
+    console.log(req.body);
 
-   	//var id = JSON.parse(`{"_id":"${_id}"}`);
-   	var id = JSON.parse(`{"ssn":"${ssn}"}`);
-   	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
-   	console.log(id);
+    var company=req.body.outputCompany;
+    var firstName=req.body.outputFirstName;
+    var lastName=req.body.outputLastName;
+    var DOB=req.body.outputDOB;
+    var age=req.body.outputAge;
+    var race=req.body.outputRace;
+    var sex=req.body.outputSex;
+    var city=req.body.outputCity;
+    var county=req.body.outputCounty;
+    var departure=req.body.outputDeparture;
+    var id = req.body.outputID;
 
-   	var update = JSON.parse(`{"lastName":"${lastName}","firstName":"${firstName}","campus":"${campus}"}`); //"SSN":"${SSN}","age":"${age}","sex":"${sex}",}
-   	console.log(update);
+    //var id = JSON.parse(`{"DOB":"${DOB}"}`);
+    //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
+ 
+    var filter = JSON.parse(`{"id":"${id}"}`);
+    var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
 
-   	collection.updateOne(id, {$set:update}, function(err, res) {
-    	if (err) 
-    		throw err;
-   		console.log("1 document updated");
-    	//db.close();
-  	});
-  	res.redirect('/cadetRecords');
+    console.log(update);
 
+    collection.updateOne(filter, {$set:update}, function(err, res) {
+      if (err) 
+        throw err;
+      console.log("1 document updated");
+      //db.close();
+    });
+    res.redirect('/applicantRecords');
 });
 
 module.exports = router;

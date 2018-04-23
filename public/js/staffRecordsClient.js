@@ -50,7 +50,7 @@ function showStaff()
 					<tr>
 
 						<td>${item.email}</td>
-						<td>${item.password}</td>
+						<td>${item.pwd}</td>
 						<td>${item.role}</td>
 
 						<td><button class="btn btn-primary" onclick="viewStaff(${i});" >Edit</button></td>
@@ -75,7 +75,7 @@ function viewStaff(item)
 
 
 		localStorage.setItem("email", JSON.stringify(staff.email));
-		localStorage.setItem("password", JSON.stringify(staff.password));
+		localStorage.setItem("password", JSON.stringify(staff.pwd));
 		localStorage.setItem("role", JSON.stringify(staff.role));
 
 	}
