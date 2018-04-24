@@ -17,7 +17,7 @@ router.get("/getApplicantRecords", function(req, res){
 	//res.render('cadets', {info: docs})
 
 	})
-})
+});
 
 
 router.get("/applicantRecords", function(req, res){
@@ -27,8 +27,7 @@ router.get("/applicantRecords", function(req, res){
 		//collection2.find().toArray(function(err, docs2){
 			res.render('applicantRecords', {infoApplicants: docs})
 		})
-	//})
-})
+});
 
 
 module.exports = router
