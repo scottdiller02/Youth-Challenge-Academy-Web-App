@@ -36,12 +36,12 @@ function showCadets()
 						<th>City</th>
 						<th>County</th>
 						<th>Departure</th>
-						<th>SSN</th>
+						
 						<th>ID</th>
 						<th>Edit</th>
 						<th>View</th>
 					</tr>
-			`;
+			`;	//<th>SSN</th>
 	
 	
 	if (cadetsArr===null)
@@ -69,12 +69,12 @@ function showCadets()
 						<td>${item.county}</td>
 						<td>${item.departure}</td>
 
-						<td>${item.ssn}</td>
-						<td>${item.ID}</td>
+						
+						<td>${item.id}</td>
 						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
 						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 
-					</tr>`;
+					</tr>`; //<td>${item.ssn}</td>
 		}//end of loop
 		info+= `</table>`;
 		document.getElementById("viewCadets").innerHTML=info;
@@ -103,6 +103,7 @@ function viewCadet(item)
 		localStorage.setItem("city", JSON.stringify(cadet.city));
 		localStorage.setItem("county", JSON.stringify(cadet.county));
 		localStorage.setItem("departure", JSON.stringify(cadet.departure));
+		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
 	window.location="http://localhost:3000/editCadetRecord";
@@ -128,6 +129,7 @@ function viewCadetProfile(item)
 		localStorage.setItem("city", JSON.stringify(cadet.city));
 		localStorage.setItem("county", JSON.stringify(cadet.county));
 		localStorage.setItem("departure", JSON.stringify(cadet.departure));
+		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
 	window.location="http://localhost:3000/cadetProfile";

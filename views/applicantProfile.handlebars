@@ -3,13 +3,12 @@
 	<!--Main Content-->
 		<div class="col-sm-8 col-md-8 col-sm-push-2 col-md-push-2">
 	    <div class="thumbnail" id="thumbnailProfile">
-	        <h3><font color = "#345487">&nbsp Edit Applicant Profile</font></h3>
+	        <h3><font color = "#345487">&nbsp Applicant Profile</font></h3>
 	        <div class = "well" id="wellProfile">
 	        	
-	        	<form action="editApplicantRecord" method="post">
+	        	<form>
 
 	        	<div class="col-sm-5 col-md-5">
-	        		<input type="hidden" class="form-control" id="outputID" name="outputID">
 	        		<div class="form-group row">
 	        			<img src="./images/profilePicture.png" class="img-fluid" id="profilePicture" alt="Cadet Picture">
 	        		</div>
@@ -65,7 +64,6 @@
 					    <label for="outputRace" class="col-sm-5 col-form-label">Race:</label>
 					    <div class="col-sm-7">
 					      <input type="race" class="form-control" id="outputRace" name="outputRace">
-
 					    </div>
 					  </div>
 
@@ -84,7 +82,6 @@
 					  </div>
 
 					  <div class="form-group row">
-
 					    <label for="outputCounty" class="col-sm-5 col-form-label">County:</label>
 					    <div class="col-sm-7">
 					      <input type="county" class="form-control" id="outputCounty" name="outputCounty">
@@ -104,16 +101,6 @@
 					      <input type="notes" class="form-control" id="outputNotes">
 					    </div>
 					  </div>
-					  <div>
-					  </div>
-
-					   <div class="form-group row">
-					 	 <button type="submit" value="Submit" onclick="submit" id = "save" class="btn btn-primary">Save Changes</button>
-					 </div>
-					 <div class="form-group row">
-					 	 <button type="button" id = "cancel"class="btn btn-primary">Cancel</button>
-					 </div>
-					 
 
 	        		</div>
 	        	</form>
@@ -126,4 +113,4 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src=""></script>
-<script type="text/javascript" src="./js/editApplicantRecordClient.js"></script>
+<script type="text/javascript" src="./js/editCadetRecordClient.js"></script>

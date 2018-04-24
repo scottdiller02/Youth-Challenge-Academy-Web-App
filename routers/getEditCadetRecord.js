@@ -24,17 +24,17 @@ router.post('/editCadetRecord', function(req, res) {
    	var city=req.body.outputCity;
    	var county=req.body.outputCounty;
    	var departure=req.body.outputDeparture;
+    var id = req.body.outputID;
 
-   	//var id = JSON.parse(`{"_id":"${_id}"}`);
-   	var id = JSON.parse(`{"DOB":"${DOB}"}`);
-   	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
-   	console.log(id);
-
-   	var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+    //var id = JSON.parse(`{"DOB":"${DOB}"}`);
+    //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
+ 
+    var filter = JSON.parse(`{"id":"${id}"}`);
+   	var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
 
    	console.log(update);
 
-   	collection.updateOne(id, {$set:update}, function(err, res) {
+   	collection.updateOne(filter, {$set:update}, function(err, res) {
     	if (err) 
     		throw err;
    		console.log("1 document updated");

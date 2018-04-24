@@ -24,7 +24,7 @@ router.post('/editStaffRecord', function(req, res) {
    	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
    	console.log(id);
 
-   	var update = JSON.parse(`{"password":"${password}","role":"${role}"}`);
+   	var update = JSON.parse(`{"pwd":"${password}","role":"${role}"}`);
 
    	console.log(update);
 

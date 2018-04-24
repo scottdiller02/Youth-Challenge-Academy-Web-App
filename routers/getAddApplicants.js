@@ -37,9 +37,10 @@ router.get("/getAddApplicant", function(req, res){
 });
 */
 router.post("/addApplicant", function(req, res) {
-	//console.log(req.body);
+	console.log(req.body);
 	
    	var collection = db.getDb().collection('applicants');
+   	var collection2 = db.getDb().collection('cadets');
    	//var _id=req.body.cadetID;
    	var company=req.body.outputCompany;
    	var firstName=req.body.outputFirstName;
@@ -51,17 +52,27 @@ router.post("/addApplicant", function(req, res) {
    	var city=req.body.outputCity;
    	var county=req.body.outputCounty;
    	var departure=req.body.outputDeparture;
+   	var id = 0;
+
+   	collection.count({}, function(err, res) {
+   		var collection2 = db.getDb().collection('cadets');
+   		collection2.count({}, function(err2, res2) {
+   			id = res + res2 + 1;
+   			
+   			var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}", "id": "${id}"}`);
+   			console.log(insert);
+
+   			collection.insertOne(insert, function(err, res) {
+    		if (err) 
+    			throw err;
+   			console.log("1 document added");
+    		//db.close();
+  			});
+   		});
+   	});
+	
    	
-
-   	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
-   	console.log(insert);
-
-   	collection.insertOne(insert, function(err, res) {
-    	if (err) 
-    		throw err;
-   		console.log("1 document added");
-    	//db.close();
-  	});
+   	
   	res.redirect('/applicantRecords');
 	
 	

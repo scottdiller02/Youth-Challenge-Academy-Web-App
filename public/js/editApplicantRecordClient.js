@@ -2,10 +2,10 @@
 var cadetInfo = [];
 
 $(document).ready(function(){
-		showCadetInfo();
+		showApplicantInfo();
 });
 
-function showCadetInfo(){
+function showApplicantInfo(){
 
 	var company = localStorage.getItem("company").replace(/"/g, "");
 	document.getElementById("outputCompany").value= company;
@@ -39,14 +39,14 @@ function showCadetInfo(){
 //function saveChanges(){
 $('#save').click(function(){
 
-	var jqxhr = $.ajax( "/editCadetRecord" ).done(function() {
+	var jqxhr = $.ajax( "/editApplicantRecord" ).done(function() {
 		console.log("success");
 	})
 
 });
 $('#cancel').click(function(){
 
-	window.location="http://localhost:3000/cadetRecords";
+	window.location="http://localhost:3000/applicantRecords";
 
 });
 //}
