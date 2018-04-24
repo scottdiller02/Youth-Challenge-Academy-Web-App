@@ -38,6 +38,7 @@ app.use(require('./routers/getEditStaffRecord'));
 app.use(require('./routers/getRecruiterHome'));
 app.use(require('./routers/getApplicantRecords'));
 app.use(require('./routers/getEditApplicantRecord'));
+app.use(require('./routers/getUpdateApplicant'));
 app.use(require('./routers/getAddApplicants'));
 app.use(require('./routers/getStaffRecords'));
 app.use(require('./routers/getSearch'));
@@ -140,6 +141,10 @@ app.get("/applicantProfile",function(req,res){
 app.get("/editApplicantRecord",function(req,res){
 		console.log("Coming an applicant request!");
 	res.render(`editApplicantRecord`);
+});
+app.get("/updateApplicant",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`updateApplicant`);
 });
 
 

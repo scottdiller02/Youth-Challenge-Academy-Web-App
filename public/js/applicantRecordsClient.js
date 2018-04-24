@@ -102,7 +102,7 @@ function updateApplicant(item){
 		localStorage.setItem("id", JSON.stringify(applicant.id));
 	}
 
-	editApplicant();
+	window.location="http://localhost:3000/updateApplicant";
 }
 
 function editApplicant(item)

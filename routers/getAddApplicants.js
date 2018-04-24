@@ -40,6 +40,7 @@ router.post("/addApplicant", function(req, res) {
 	console.log(req.body);
 	
    	var collection = db.getDb().collection('applicants');
+   	var collection2 = db.getDb().collection('cadets');
    	//var _id=req.body.cadetID;
    	var company=req.body.outputCompany;
    	var firstName=req.body.outputFirstName;
@@ -51,16 +52,18 @@ router.post("/addApplicant", function(req, res) {
    	var city=req.body.outputCity;
    	var county=req.body.outputCounty;
    	var departure=req.body.outputDeparture;
-   	var id = 5;
+   	var id = 0;
    	//TODO
-   	/*
-   	collection.count(function(err, res) {
+   	
+   	collection.count({}, function(err, res) {
+   		
+   		id = res;
    		var collection2 = db.getDb().collection('cadets');
-   		collection2.count(function(err2, res2) {
+   		collection2.count({}, function(err2, res2) {
    			id = res + res2 + 1;
    			console.log(id);
    		});
-   	});*/
+   	});
 	console.log(id);
    	/*
    	var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race":"${race}","sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}", "id": "${id}"}`);

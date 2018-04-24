@@ -10,9 +10,10 @@ router.use(bodyParser.urlencoded({
 router.use(bodyParser.json());
  
 
-router.post('/editApplicantRecord', function(req, res) {
+router.post('/updateApplicant', function(req, res) {
    	var collection = db.getDb().collection('applicants');
-    console.log(req.body);
+    var collection2 = db.getDb().collection('cadets');
+    //console.log(req.body);
 
     var company=req.body.outputCompany;
     var firstName=req.body.outputFirstName;
@@ -29,16 +30,21 @@ router.post('/editApplicantRecord', function(req, res) {
     //var id = JSON.parse(`{"DOB":"${DOB}"}`);
     //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
  
+    var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}","id":"${id}"}`);
     var filter = JSON.parse(`{"id":"${id}"}`);
-    var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+    console.log(insert);
 
-    console.log(update);
-
-    collection.updateOne(filter, {$set:update}, function(err, res) {
-      if (err) 
-        throw err;
-      console.log("1 document updated");
-      //db.close();
+    collection2.insertOne(insert, function(err, res) {
+        if (err) 
+            throw err;
+        console.log("1 cadet added");
+        //db.close();
+    });
+    collection.deleteOne(filter, function(err, res) {
+        if (err) 
+            throw err;
+        console.log("1 applicant removed");
+        //db.close();
     });
     res.redirect('/applicantRecords');
 });

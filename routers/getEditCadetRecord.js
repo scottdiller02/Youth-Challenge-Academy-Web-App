@@ -30,7 +30,7 @@ router.post('/editCadetRecord', function(req, res) {
     //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
  
     var filter = JSON.parse(`{"id":"${id}"}`);
-   	var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
+   	var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
 
    	console.log(update);
 
