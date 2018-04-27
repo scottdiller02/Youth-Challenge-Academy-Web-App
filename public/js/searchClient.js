@@ -5,6 +5,7 @@ $('#searchBtn').click(function(){
 	localStorage.setItem("inputSearch", document.getElementById("inputSearch").value);
 	window.location="http://localhost:3000/searchCadets";
 });
+
 /*
 //TODO make enter key submit search
 var input = document.getElementById("inputSearch");
