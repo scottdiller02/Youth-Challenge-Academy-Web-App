@@ -2,7 +2,8 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
- 
+
+//gets the applicants from database
 router.get("/getApplicantRecords", function(req, res){
 	var collection = db.getDb().collection('applicants')
 	res.setHeader("Content-Type", "application/json");
@@ -13,8 +14,7 @@ router.get("/getApplicantRecords", function(req, res){
 	for(doc of docs) 
 	info.push(doc);
 	res.json(info);
-	//console.log(info);
-	//res.render('cadets', {info: docs})
+
 
 	})
 });
@@ -24,9 +24,9 @@ router.get("/applicantRecords", function(req, res){
 	var collection = db.getDb().collection('applicants');
 
 	collection.find().toArray(function(err, docs){
-		//collection2.find().toArray(function(err, docs2){
+
 			res.render('applicantRecords', {infoApplicants: docs})
-		})
+	})
 });
 
 

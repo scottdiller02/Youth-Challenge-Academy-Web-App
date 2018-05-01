@@ -4,7 +4,7 @@ var cadetInfo = [];
 $(document).ready(function(){
 		showApplicantInfo();
 });
-
+//auto completes the form
 function showApplicantInfo(){
 
 	var company = localStorage.getItem("company").replace(/"/g, "");
@@ -44,9 +44,10 @@ $('#save').click(function(){
 	})
 
 });
+
 $('#cancel').click(function(){
 
-	window.location="http://localhost:3000/applicantRecords";
+	window.location="/applicantRecords";
 
 });
 //}

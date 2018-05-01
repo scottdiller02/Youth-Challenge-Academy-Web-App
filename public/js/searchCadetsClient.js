@@ -19,7 +19,7 @@ function registerButtonEvents()
 	}
 }
 
-
+//creates the table
 function showCadets()
 {
 	
@@ -52,10 +52,11 @@ function showCadets()
 		var inputSearch = localStorage.getItem("inputSearch").replace(/"/g, "");
 		console.log(searchBy);
 		console.log(inputSearch);
-
+		//loops through all cadets
 		for (let i in cadetsArr)
 		{
 			let item=cadetsArr[i];
+			//loops through each cadets property values to find one that matches the search
 			for (let [key, value] of Object.entries(item)) {
     			if (item.hasOwnProperty(key)) {
        				if(key == searchBy && value == inputSearch){
@@ -75,7 +76,7 @@ function showCadets()
 
 						
 						<td>${item.id}</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="editCadet(${i});" >Edit</button></td>
 						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 
 					</tr>`; //<td>${item.ssn}</td>
@@ -89,8 +90,8 @@ function showCadets()
 		document.getElementById("viewCadets").innerHTML=info;
 	}
 }
-
-function viewCadet(item)
+//goes to edit cadet page
+function editCadet(item)
 {
 	cadet = cadetsArr[item];
 	
@@ -115,8 +116,9 @@ function viewCadet(item)
 		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
-	window.location="http://localhost:3000/editCadetRecord";
+	window.location="/editCadetRecord";
 }
+//goes to view cadet page
 function viewCadetProfile(item)
 {
 	cadet = cadetsArr[item];
@@ -141,7 +143,7 @@ function viewCadetProfile(item)
 		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
-	window.location="http://localhost:3000/cadetProfile";
+	window.location="/cadetProfile";
 }
 
 function getMenuArr(){

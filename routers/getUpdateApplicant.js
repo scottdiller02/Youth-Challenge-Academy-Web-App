@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
  
-
+//adds applicant to cadets and removes applicant from applicants
 router.post('/updateApplicant', function(req, res) {
    	var collection = db.getDb().collection('applicants');
     var collection2 = db.getDb().collection('cadets');
@@ -27,9 +27,7 @@ router.post('/updateApplicant', function(req, res) {
     var departure=req.body.outputDeparture;
     var id = req.body.outputID;
 
-    //var id = JSON.parse(`{"DOB":"${DOB}"}`);
-    //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
- 
+
     var insert = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}","id":"${id}"}`);
     var filter = JSON.parse(`{"id":"${id}"}`);
     console.log(insert);

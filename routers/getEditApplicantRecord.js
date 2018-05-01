@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
  
-
+//edits applicant record
 router.post('/editApplicantRecord', function(req, res) {
    	var collection = db.getDb().collection('applicants');
     console.log(req.body);
@@ -26,9 +26,6 @@ router.post('/editApplicantRecord', function(req, res) {
     var departure=req.body.outputDeparture;
     var id = req.body.outputID;
 
-    //var id = JSON.parse(`{"DOB":"${DOB}"}`);
-    //var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
- 
     var filter = JSON.parse(`{"id":"${id}"}`);
     var update = JSON.parse(`{"company":"${company}","lastName":"${lastName}","firstName":"${firstName}","DOB":"${DOB}","age":"${age}","race": "${race}", "sex":"${sex}","city":"${city}","county":"${county}","departure":"${departure}"}`);
 

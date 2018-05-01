@@ -1,5 +1,5 @@
 let cadetsArr=[];
-
+//loads cadets when page is ready
 $(document).ready(function(){
 	var jqxhr = $.ajax( "/getCadetRecords" ).done(function(docs) {
 		for(doc of docs)
@@ -19,7 +19,7 @@ function registerButtonEvents()
 	}
 }
 
-
+//creates cadets table
 function showCadets()
 {
 	
@@ -80,7 +80,7 @@ function showCadets()
 		document.getElementById("viewCadets").innerHTML=info;
 	}
 }
-
+//goes to edit cadets
 function viewCadet(item)
 {
 	cadet = cadetsArr[item];
@@ -106,8 +106,9 @@ function viewCadet(item)
 		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
-	window.location="http://localhost:3000/editCadetRecord";
+	window.location="/editCadetRecord";
 }
+//goes to view cadets
 function viewCadetProfile(item)
 {
 	cadet = cadetsArr[item];
@@ -132,7 +133,7 @@ function viewCadetProfile(item)
 		localStorage.setItem("id", JSON.stringify(cadet.id));
 	}
 
-	window.location="http://localhost:3000/cadetProfile";
+	window.location="/cadetProfile";
 }
 
 function getMenuArr(){
