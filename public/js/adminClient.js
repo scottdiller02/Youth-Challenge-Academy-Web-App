@@ -1,6 +1,7 @@
 let cadetsArr=[];
 let staff=[];
 
+//ready page when loaded
 $(document).ready(function(){
 	var jqxhr = $.ajax( "/getCadetRecords" ).done(function(docs) {
 		for(doc of docs)
@@ -23,7 +24,7 @@ function registerButtonEvents()
 		} );
 	}
 }
-
+//creates cadets table
 function showCadets()
 {
 	let cadetStorage=localStorage.getItem("cadets");

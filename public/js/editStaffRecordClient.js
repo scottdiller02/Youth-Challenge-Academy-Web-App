@@ -4,7 +4,7 @@ var staffInfo = [];
 $(document).ready(function(){
 		showStaffInfo();
 });
-
+//auto completes the form
 function showStaffInfo(){
 
 	var email = localStorage.getItem("email").replace(/"/g, "");
@@ -26,6 +26,6 @@ $('#save').click(function(){
 });
 $('#cancel').click(function(){
 
-	window.location="http://localhost:3000/staffRecords";
+	window.location="/staffRecords";
 
 });

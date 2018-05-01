@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
  
-
+//edits staff records
 router.post('/editStaffRecord', function(req, res) {
    	var collection = db.getDb().collection('staff');
    	console.log(req.body);
@@ -18,11 +18,8 @@ router.post('/editStaffRecord', function(req, res) {
    	var password=req.body.outputPassword;
    	var role=req.body.outputRole;
 
-
-   	//var id = JSON.parse(`{"_id":"${_id}"}`);
+    //for now uses email as primary key
    	var id = JSON.parse(`{"email":"${email}"}`);
-   	//var id = JSON.parse(`{"_id":"5aab24cbd39c9e2cd0fe7a09"}`);
-   	console.log(id);
 
    	var update = JSON.parse(`{"pwd":"${password}","role":"${role}"}`);
 
