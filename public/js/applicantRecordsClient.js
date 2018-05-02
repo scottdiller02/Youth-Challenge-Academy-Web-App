@@ -37,8 +37,7 @@ function showApplicants()
 						<th>County</th>
 						<th>Departure</th>
 						<th>ID</th>
-						<th>Edit</th>
-						<th>View</th>
+						<th>Edit/View</th>
 						<th>Update to Cadet</th>
 					</tr>
 			`;
@@ -69,8 +68,7 @@ function showApplicants()
 						<td>${item.county}</td>
 						<td>${item.departure}</td>
 						<td>${item.id}</td>
-						<td><button class="btn btn-primary" onclick="editApplicant(${i});" >Edit</button></td>
-						<td><button class="btn btn-primary" onclick="viewApplicantProfile(${i});" >View</button></td>
+						<td><button class="btn btn-primary" onclick="editApplicant(${i});" >Edit/View</button></td>
 						<td><button class="btn btn-primary" onclick="updateApplicant(${i});" >Update</button></td>
 					</tr>`;
 		}//end of loop

@@ -122,12 +122,25 @@
 	height: 420px;
 	margin: auto;
 }
-
+#thumbnailAdminHome {
+	text-align: center;
+	position: relative;
+	width: 260px;
+	height: 620px;
+	margin: auto;
+}
 .well {
 	text-align: center;
 	position: relative;
 	width: 210px;
 	height: 400px;
+	margin: auto;
+}
+#wellAdminHome {
+	text-align: center;
+	position: relative;
+	width: 210px;
+	height: 520px;
 	margin: auto;
 }
 #loginWell{

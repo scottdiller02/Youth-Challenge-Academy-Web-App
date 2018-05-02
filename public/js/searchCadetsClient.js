@@ -38,8 +38,7 @@ function showCadets()
 						<th>Departure</th>
 						
 						<th>ID</th>
-						<th>Edit</th>
-						<th>View</th>
+						<th>Edit/View</th>
 					</tr>
 			`;	//<th>SSN</th>
 	
@@ -75,9 +74,7 @@ function showCadets()
 
 						
 						<td>${item.id}</td>
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit</button></td>
-						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
-
+						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit/View</button></td>
 					</tr>`; //<td>${item.ssn}</td>
        				}
     			}
