@@ -19,7 +19,7 @@ function registerButtonEvents()
 	}
 }
 
-
+//creates applicant table
 function showApplicants()
 {
 	
@@ -76,6 +76,7 @@ function showApplicants()
 		document.getElementById("viewApplicants").innerHTML=info;
 	}
 }
+//saves applicant data and goes to update applicant page
 function updateApplicant(item){
 	applicant = applicantsArr[item];
 	
@@ -100,9 +101,9 @@ function updateApplicant(item){
 		localStorage.setItem("id", JSON.stringify(applicant.id));
 	}
 
-	window.location="http://localhost:3000/updateApplicant";
+	window.location="/updateApplicant";
 }
-
+//goes to edit applicant page
 function editApplicant(item)
 {
 	applicant = applicantsArr[item];
@@ -128,9 +129,9 @@ function editApplicant(item)
 		localStorage.setItem("id", JSON.stringify(applicant.id));
 	}
 
-	window.location="http://localhost:3000/editApplicantRecord";
+	window.location="/editApplicantRecord";
 }
-
+//goes to view page
 function viewApplicantProfile(item)
 {
 	applicant = applicantsArr[item];
@@ -156,7 +157,7 @@ function viewApplicantProfile(item)
 		localStorage.setItem("id", JSON.stringify(applicant.id));
 	}
 
-	window.location="http://localhost:3000/applicantProfile";
+	window.location="/applicantProfile";
 }
 
 function getMenuArr(){

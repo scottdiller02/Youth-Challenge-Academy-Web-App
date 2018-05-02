@@ -2,7 +2,7 @@ var express = require('express')
 , router = express.Router()
 
 var db=require("../db");
- 
+//gets the collections from the database
 router.get("/getAdminHome", function(req, res){
 	var collection1 = db.getDb().collection('cadets')
 	var collection2 = db.getDb().collection('users')

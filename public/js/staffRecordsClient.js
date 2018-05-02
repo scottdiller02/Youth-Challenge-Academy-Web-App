@@ -19,7 +19,7 @@ function registerButtonEvents()
 	}
 }
 
-
+//makes staff table
 function showStaff()
 {
 	
@@ -53,15 +53,15 @@ function showStaff()
 						<td>${item.pwd}</td>
 						<td>${item.role}</td>
 
-						<td><button class="btn btn-primary" onclick="viewStaff(${i});" >Edit</button></td>
+						<td><button class="btn btn-primary" onclick="editStaff(${i});" >Edit</button></td>
 					</tr>`;
 		}//end of loop
 		info+= `</table>`;
 		document.getElementById("viewStaff").innerHTML=info;
 	}
 }
-
-function viewStaff(item)
+//edit staff
+function editStaff(item)
 {
 	staff = staffArr[item];
 	
@@ -103,6 +103,6 @@ function getMenuArr(){
 
 function editStaff(item)
 {
-	window.location="http://localhost:3000/editStaffRecord";
+	window.location="/editStaffRecord";
 
 }

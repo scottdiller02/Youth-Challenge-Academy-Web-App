@@ -4,7 +4,7 @@ var cadetInfo = [];
 $(document).ready(function(){
 		showApplicantInfo();
 });
-
+//autofills the form
 function showApplicantInfo(){
 
 	var company = localStorage.getItem("company").replace(/"/g, "");
@@ -44,10 +44,10 @@ $('#save').click(function(){
 	})
 
 });
-
+//cancel
 $('#cancel').click(function(){
 
-	window.location="http://localhost:3000/cadetRecords";
+	window.location="/cadetRecords";
 
 });
 //}
