@@ -10,12 +10,12 @@ router.use(bodyParser.urlencoded({
 router.use(bodyParser.json());
  
 //edits session notes
-router.post('/sessionNotes', function(req, res) {
+router.post('/noteSession', function(req, res) {
    	var collection = db.getDb().collection('cadets');
    	console.log(req.body);
 
-   	var notes =req.body.outputNotes;
-    var id = req.body.outputID;
+   	var notes =req.body.notes;
+    var id = req.body.outputIDS;
  
     var filter = JSON.parse(`{"id":"${id}"}`);
    	var update = JSON.parse(`{"notes":"${notes}"}`);

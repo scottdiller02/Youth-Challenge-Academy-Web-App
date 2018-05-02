@@ -44,6 +44,7 @@ app.use(require('./routers/getAddApplicants'));
 app.use(require('./routers/getAddStaff'));
 app.use(require('./routers/getStaffRecords'));
 app.use(require('./routers/getSearch'));
+app.use(require('./routers/getNoteSession'));
 //app.user routers
 app.use(require('./routers/login'));
 // Connect to Mongo on start
