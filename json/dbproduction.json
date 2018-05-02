@@ -1,0 +1,6 @@
+{
+	 "devServer":
+    {
+       "url":"mongodb://scottdiller02:5wzT0zTKp9jMdV6zZoCTPSjDHyxbMfmxpaNZF75DkQdQD3D0GXbMnTVKBbNKeN5jO5dlArSVSEzQeFeLUmhJyA==@scottdiller02.documents.azure.com:10255/?ssl=true"
+    }
+}
