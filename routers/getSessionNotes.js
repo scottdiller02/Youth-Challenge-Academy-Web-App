@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
  
-//edits cadet record
+//edits session notes
 router.post('/sessionNotes', function(req, res) {
    	var collection = db.getDb().collection('cadets');
    	console.log(req.body);
