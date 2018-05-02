@@ -99,6 +99,7 @@ function updateApplicant(item){
 		localStorage.setItem("county", JSON.stringify(applicant.county));
 		localStorage.setItem("departure", JSON.stringify(applicant.departure));
 		localStorage.setItem("id", JSON.stringify(applicant.id));
+		localStorage.setItem("formComplete", JSON.stringify(applicant.formComplete));
 	}
 
 	window.location="/updateApplicant";
@@ -127,6 +128,7 @@ function editApplicant(item)
 		localStorage.setItem("county", JSON.stringify(applicant.county));
 		localStorage.setItem("departure", JSON.stringify(applicant.departure));
 		localStorage.setItem("id", JSON.stringify(applicant.id));
+		localStorage.setItem("formComplete", JSON.stringify(applicant.formComplete));
 	}
 
 	window.location="/editApplicantRecord";
@@ -155,6 +157,7 @@ function viewApplicantProfile(item)
 		localStorage.setItem("county", JSON.stringify(applicant.county));
 		localStorage.setItem("departure", JSON.stringify(applicant.departure));
 		localStorage.setItem("id", JSON.stringify(applicant.id));
+		localStorage.setItem("formComplete", JSON.stringify(applicant.formComplete));
 	}
 
 	window.location="/applicantProfile";

@@ -31,6 +31,8 @@ function showApplicantInfo(){
 	document.getElementById("outputCounty").value = county;
 	var departure = localStorage.getItem("departure").replace(/"/g, "");;
 	document.getElementById("outputDeparture").value = departure;
+	var formComplete = localStorage.getItem("formComplete").replace(/"/g, "");;
+	document.getElementById("outputFormComplete").value = formComplete;
 
 
 
