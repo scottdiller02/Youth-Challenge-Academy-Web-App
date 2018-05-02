@@ -153,7 +153,10 @@ app.get("/updateApplicant",function(req,res){
 		console.log("Coming an applicant request!");
 	res.render(`updateApplicant`);
 });
-
+app.get("/noteSession",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`noteSession`);
+});
 
 app.set('db',db);
 module.exports.app=app;
