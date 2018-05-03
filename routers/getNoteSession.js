@@ -9,21 +9,23 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
  
-//enters session notes
+//edits session notes
 router.post('/noteSession', function(req, res) {
-   	var collection = db.getDb().collection('notes');
+   	var collection = db.getDb().collection('cadets');
    	console.log(req.body);
 
    	var notes =req.body.notes;
     var id = req.body.outputIDS;
  
+    var filter = JSON.parse(`{"id":"${id}"}`);
+   	var update = JSON.parse(`{"notes":"${notes}"}`);
 
-   	var notes = JSON.parse(`{"id":"${id}","notes":"${notes}"}`);
+   	console.log(update);
 
-   	collection.insert(notes, function(err, res) {
+   	collection.updateOne(filter, {$set:update}, function(err, res) {
     	if (err) 
     		throw err;
-   		console.log("1 document inserted");
+   		console.log("1 document updated");
     	//db.close();
   	});
   	res.redirect('/counselorHome');
