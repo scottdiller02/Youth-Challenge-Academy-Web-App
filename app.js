@@ -45,6 +45,7 @@ app.use(require('./routers/getAddStaff'));
 app.use(require('./routers/getStaffRecords'));
 app.use(require('./routers/getSearch'));
 app.use(require('./routers/getNoteSession'));
+app.use(require('./routers/getCadetNotes'));
 //app.user routers
 app.use(require('./routers/login'));
 // Connect to Mongo on start
@@ -157,6 +158,14 @@ app.get("/updateApplicant",function(req,res){
 app.get("/noteSession",function(req,res){
 		console.log("Coming an applicant request!");
 	res.render(`noteSession`);
+});
+app.get("/cadetNotes",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`cadetNotes`);
+});
+app.get("/note",function(req,res){
+		console.log("Coming an applicant request!");
+	res.render(`note`);
 });
 
 app.set('db',db);

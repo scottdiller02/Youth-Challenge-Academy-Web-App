@@ -1,0 +1,46 @@
+{{!--cadetNotes.handlebars --}}
+<div>
+	<!--Main Content-->
+		<div class="col-sm-10 col-md-10">
+	    <div class="thumbnail" id="thumbnailRecord">
+	        <h3><font color = "#345487">&nbsp Cadet Records</font></h3>
+	        <div class = "well" id="wellRecord">
+	        	<div class="col-sm-12 col-md-12" id="viewCadets">
+	        	<table class="table table-striped">
+					<tr>
+						<th>Company</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>DOB</th>
+						<th>Age</th>
+						<th>Race</th>
+						<th>Sex</th>
+						<th>County</th>
+						<th>Departure</th>
+						<th>Notes</th>
+					</tr>
+					{{#each infoCadets}}
+					<tr>
+						<td>{{company}}</td>
+						<td>{{firstName}}</td>
+						<td>{{lastName}}</td>
+						<td>{{DOB}}</td>
+						<td>{{age}}</td>
+						<td>{{race}}</td>
+						<td>{{sex}}</td>
+						<td>{{county}}</td>
+						<td>{{firstName}}</td>
+						<td><button type="button" class="btn btn-primary " onclick="goToNotes({{@index}})">Edit</button></td>
+					</tr>
+					{{/each}}
+				</table>
+				</div>		
+			</div>
+	    </div>
+	    </div>
+	<!--Main Content end-->
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="./js/cadetRecordsClient.js"></script>
