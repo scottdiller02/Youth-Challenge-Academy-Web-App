@@ -1,3 +1,7 @@
+//post edit staff records
+//Brandon Flynt
+//edit staff
+
 var express = require('express')
 , router = express.Router()
 

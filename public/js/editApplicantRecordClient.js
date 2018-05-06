@@ -1,3 +1,5 @@
+//edit applicant record
+//Brandon Flynt
 
 var cadetInfo = [];
 

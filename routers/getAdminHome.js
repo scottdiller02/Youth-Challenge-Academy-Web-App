@@ -1,3 +1,6 @@
+//admin home
+//Scott Diller
+
 var express = require('express')
 , router = express.Router()
 

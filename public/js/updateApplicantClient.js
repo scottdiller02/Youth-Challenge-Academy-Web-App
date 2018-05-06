@@ -1,3 +1,5 @@
+//update applicant
+//Brandon Flynt
 
 var cadetInfo = [];
 
@@ -36,7 +38,7 @@ function showApplicantInfo(){
 
 }
 
-//function saveChanges(){
+//save
 $('#save').click(function(){
 
 	var jqxhr = $.ajax( "/updateApplicant" ).done(function() {

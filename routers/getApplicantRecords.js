@@ -1,3 +1,6 @@
+//gets applicant records
+//Scott Diller
+
 var express = require('express')
 , router = express.Router()
 

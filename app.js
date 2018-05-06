@@ -34,7 +34,6 @@ app.use(require('./routers/getCadetRecords'));
 app.use(require('./routers/getAddCadetRecords'));
 app.use(require('./routers/getCounselorHome'));
 app.use(require('./routers/getEditCadetRecord'));
-app.use(require('./routers/getViewCadetRecord'));
 app.use(require('./routers/getEditStaffRecord'));
 app.use(require('./routers/getRecruiterHome'));
 app.use(require('./routers/getApplicantRecords'));
@@ -43,7 +42,6 @@ app.use(require('./routers/getUpdateApplicant'));
 app.use(require('./routers/getAddApplicants'));
 app.use(require('./routers/getAddStaff'));
 app.use(require('./routers/getStaffRecords'));
-app.use(require('./routers/getSearch'));
 app.use(require('./routers/getNoteSession'));
 app.use(require('./routers/getCadetNotes'));
 //app.user routers

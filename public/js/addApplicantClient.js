@@ -1,3 +1,4 @@
+//Brandon Flynt
 //click save button
 $('#saveAddApplicant').click(function(){
 	var jqxhr = $.ajax( "/addApplicant" ).done(function() {

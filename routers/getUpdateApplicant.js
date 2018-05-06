@@ -1,3 +1,7 @@
+//update applicant to cadet
+//Brandon Flynt
+//inserts applicant record into cadet records, then removes the applicant record
+
 var express = require('express')
 , router = express.Router()
 

@@ -1,3 +1,6 @@
+//gets cadet notes
+//wip
+
 var express = require('express')
 , router = express.Router()
 

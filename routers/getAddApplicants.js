@@ -1,3 +1,6 @@
+//add applicant (should probably be named postAddApplicant)
+//Brandon Flynt
+
 var express = require('express')
 , router = express.Router()
 
@@ -14,7 +17,7 @@ router.use(bodyParser.json());
 //adds applicants
 router.post("/addApplicant", function(req, res) {
 	console.log(req.body);
-	
+	  //gets collections and properties of new applicant
    	var collection = db.getDb().collection('applicants');
    	var collection2 = db.getDb().collection('cadets');
    	var company=req.body.outputCompany;
@@ -29,7 +32,7 @@ router.post("/addApplicant", function(req, res) {
    	var departure=req.body.outputDeparture;
     var formComplete=req.body.outputFormComplete;
    	var id = 0;
-
+    //generates id
    	collection.count({}, function(err, res) {
    		var collection2 = db.getDb().collection('cadets');
    		collection2.count({}, function(err2, res2) {

@@ -1,4 +1,5 @@
 //search button functionality
+//Brandon Flynt
 
 $('#searchBtn').click(function(){
 	console.log(document.getElementById("searchBy").value);

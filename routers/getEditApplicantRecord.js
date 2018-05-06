@@ -1,3 +1,7 @@
+//post edit applicant records
+//Brandon Flynt
+//edit an applicant
+
 var express = require('express')
 , router = express.Router()
 

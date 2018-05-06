@@ -1,3 +1,6 @@
+//staff records
+//Scott Diller
+//makes a table of the staff
 let staffArr=[];
 
 $(document).ready(function(){

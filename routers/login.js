@@ -1,3 +1,7 @@
+//login
+//Scott Diller
+//checks staff role, logs user in based on role
+
 var express = require('express')
 , router = express.Router()
 var db = require('../db')

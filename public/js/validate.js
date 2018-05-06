@@ -1,3 +1,5 @@
+//Scott Diller
+
 class Validation{
 	constructor(id, re, errorMsg)
 	{

@@ -1,3 +1,4 @@
+//Brandon Flynt
 //save button
 $('#saveAddCadet').click(function(){
 	var jqxhr = $.ajax( "/addCadet" ).done(function() {

@@ -1,3 +1,6 @@
+//get cadet profile
+//Scott Diller
+
 var express = require('express')
 , router = express.Router()
 

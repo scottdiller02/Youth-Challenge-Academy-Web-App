@@ -1,3 +1,6 @@
+//add staff
+//Scott Diller
+
 var express = require('express')
 , router = express.Router()
 
@@ -46,16 +49,4 @@ router.post("/addStaff", function(req, res) {
 	
 });
 
-/*
-router.get("/applicants", function(req, res){
-	var collection1 = db.getDb().collection('applicants');
-
-	collection1.find().toArray(function(err, docs1){
-		//collection2.find().toArray(function(err, docs2){
-			res.render('applicants', {infoP1: docs1, infoP2: docs2})
-		})
-	//})
-})
-
-*/
 module.exports = router;

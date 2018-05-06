@@ -1,3 +1,7 @@
+//search cadets
+//Scott Diller
+//displays a table of the cadets that fit the specifications of the search
+
 let cadetsArr=[];
 
 $(document).ready(function(){
@@ -75,13 +79,9 @@ function showCadets()
 
 						
 						<td>${item.id}</td>
-<<<<<<< HEAD
-						<td><button class="btn btn-primary" onclick="viewCadet(${i});" >Edit/View</button></td>
-=======
-						<td><button class="btn btn-primary" onclick="editCadet(${i});" >Edit</button></td>
-						<td><button class="btn btn-primary" onclick="viewCadetProfile(${i});" >View</button></td>
 
->>>>>>> 9159d7a71447a534d3aab1028e6b04803f6c327b
+						<td><button class="btn btn-primary" onclick="editCadet(${i});" >Edit/View</button></td>
+
 					</tr>`; //<td>${item.ssn}</td>
        				}
     			}
@@ -121,48 +121,4 @@ function editCadet(item)
 
 	window.location="/editCadetRecord";
 }
-//goes to view cadet page
-function viewCadetProfile(item)
-{
-	cadet = cadetsArr[item];
-	
 
-	if(cadetsArr.length==0)
-	{
-		clearCart();
-	}
-	else
-	{
-		localStorage.setItem("company", JSON.stringify(cadet.company));
-		localStorage.setItem("firstName", JSON.stringify(cadet.firstName));
-		localStorage.setItem("lastName", JSON.stringify(cadet.lastName));
-		localStorage.setItem("DOB", JSON.stringify(cadet.DOB));
-		localStorage.setItem("age", JSON.stringify(cadet.age));
-		localStorage.setItem("race", JSON.stringify(cadet.race));
-		localStorage.setItem("sex", JSON.stringify(cadet.sex));
-		localStorage.setItem("city", JSON.stringify(cadet.city));
-		localStorage.setItem("county", JSON.stringify(cadet.county));
-		localStorage.setItem("departure", JSON.stringify(cadet.departure));
-		localStorage.setItem("id", JSON.stringify(cadet.id));
-	}
-
-	window.location="/cadetProfile";
-}
-
-function getMenuArr(){
-
-		var xhr = new XMLHttpRequest();
-	    var url = ajaxUrl+"/getCadetRecords";
-		xhr.open("POST", url, true);
-		xhr.setRequestHeader("Content-type", "application/json");
-		xhr.onreadystatechange=function(){
-         if (xhr.readyState==4 && xhr.status==200){
-           arr=JSON.parse(xhr.responseText);
-            showCadets();
-       }
-      }
-      xhr.send();
-
-
-   
-}

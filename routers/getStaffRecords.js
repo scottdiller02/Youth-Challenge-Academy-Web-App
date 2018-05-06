@@ -1,3 +1,7 @@
+//get staff records
+//Scott Diller
+//gets staff records from db to be displayed
+
 var express = require('express')
 , router = express.Router()
 

@@ -1,3 +1,5 @@
+//edit staff client
+//Scott Diller
 
 var staffInfo = [];
 

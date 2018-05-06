@@ -1,3 +1,7 @@
+//post edit cadet record
+//Brandon Flynt
+//edit a cadet record
+
 var express = require('express')
 , router = express.Router()
 

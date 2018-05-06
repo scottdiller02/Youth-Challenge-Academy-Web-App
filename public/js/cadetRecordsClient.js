@@ -1,3 +1,6 @@
+//cadet records 
+//Scott Diller & Brandon Flynt
+
 let cadetsArr=[];
 //loads cadets when page is ready
 $(document).ready(function(){

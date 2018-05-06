@@ -1,3 +1,6 @@
+//applicant records
+//Scott Diller
+
 let applicantsArr=[];
 
 $(document).ready(function(){
