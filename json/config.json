@@ -1,6 +1,6 @@
 {
 	 "devServer":
     {
-       "url":"mongodb://admin:admin@localhost:27017/YCAdb"
+       "url":"mongodb://localhost:27017/YCAdb"
     }
 }
